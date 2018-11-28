@@ -87,3 +87,9 @@ command! -bang -complete=buffer -nargs=? Bclose call s:Bclose('<bang>', '<args>'
 "autocmd BufDelete * if len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1 | quit | endif
 "autocmd BufDelete * if len(filter(range(1, bufnr('$')), '! empty(bufname(v:val)) && buflisted(v:val)')) == 1 | quit | endif
 
+
+
+if v:this_session == expand("$HOME") . ".cache/vim/sessions/matlab-session.vim"
+    nnoremap <buffer> <silent> <BS> :Bclose<CR>
+endif
+
