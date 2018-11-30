@@ -76,7 +76,9 @@ set sessionoptions-=options	" do not store global and local values in a session
 set wildmenu			" enable wildmenu for tab completion of commands
 set wildmode=longest:list,full	" format wildmenu to expand and scroll with tab
 
-packadd! matchit		" needed for matlab indentation functionality
+if hostname() == "zenbook"
+    packadd! matchit		" needed for matlab indentation functionality
+endif
 
 set autochdir			" cwd to current file
 
