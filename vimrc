@@ -85,144 +85,6 @@ set autochdir			" cwd to current file
 
 
 "------------------------------------------------------------------"
-" Ricing                                                           "
-"------------------------------------------------------------------"
-
-" statusline
-set laststatus=2			    " always show status bar
-set statusline =
-set statusline +=%1*\ \ %<%F\ \ %*	    " full path
-set statusline +=%2*\ \ %y%*                " file type
-set statusline +=%2*\ %m\ %*                " modified flag
-set statusline +=%3*%=%*		    " centre padding
-set statusline +=%4*\ \ %l\ /\ %L\ \ %*	    " current / total lines
-set statusline +=%5*\ %n\ %*		    " buffer number
-
-hi User1 ctermfg=0 ctermbg=5 cterm=none 
-hi User2 ctermfg=0 ctermbg=4 cterm=none 
-hi User3 ctermfg=0 ctermbg=14 cterm=none 
-hi User4 ctermfg=0 ctermbg=2 cterm=none 
-hi User5 ctermfg=0 ctermbg=3 cterm=none 
-
-" vimdiff
-hi DiffAdd      cterm=none ctermfg=0 ctermbg=2
-hi DiffChange   cterm=none ctermfg=0 ctermbg=4
-hi DiffText     cterm=none ctermfg=0 ctermbg=6
-hi DiffDelete   cterm=bold ctermfg=0 ctermbg=1
-
-" folds
-hi Folded ctermbg=8 ctermfg=4 cterm=none
-
-" visual mode highlighting
-hi Visual ctermbg=7 ctermfg=0
-
-" matched brackets
-hi MatchParen ctermfg=7 cterm=underline ctermbg=0 
-
-" line numbers
-set number relativenumber
-hi LineNr ctermfg=5
-
-" highlight cursor line
-highlight CursorLine ctermbg=8 cterm=bold
-augroup CursorLine
-    au!
-    au VimEnter,WinEnter,BufWinEnter * setlocal  cursorline
-    au WinLeave * setlocal nocursorline
-augroup END
-
-" change cursor shape in insert mode
-let &t_SI = "\e[4 q" "underscore
-let &t_EI = "\e[2 q" "block
-augroup myCmds
-    au!
-    autocmd VimEnter * silent !echo -ne "\e[2 q"
-augroup END
-
-" character for line in split
-set fillchars=vert:\|    
-
-
-"------------------------------------------------------------------"
-" Global keybindings                                               "
-"------------------------------------------------------------------"
-
-" reload current buffer
-"nnoremap <C-l> :e<CR>
-
-" toggle fold
-nnoremap <space> za
-
-" buffer navigation
-nnoremap <leader>b :ls<CR>:b<space>
-nnoremap <Leader>v :ls<CR>:vert sb<space>
-nnoremap <Leader>j :bnext<CR> 
-nnoremap <Leader>k :bprevious<CR>
-nnoremap <silent> <BS> :bdelete<CR>
-nnoremap <Leader><BS> :w<CR>:bdelete<CR>
-
-" move between tabs
-nnoremap <Leader>n gT
-nnoremap <Leader>m gt
-
-" indent selection
-vnoremap < <gv
-vnoremap > >gv
-
-" quitting and writing shortcuts
-nnoremap Q <nop>
-nnoremap QQ :q<CR>
-nnoremap !Q :q!<CR>
-nnoremap QW :wq<CR>
-nnoremap :Q :q
-nnoremap :W :w
-
-" yank to end of line
-nnoremap Y y$
-
-" copy and paste system clipboard
-nnoremap <C-p> "+p
-nnoremap <C-y> "+y
-nnoremap <C-y><C-y> ms0v$"+y`s
-vnoremap <C-p> "+p
-vnoremap <C-y> "+y
-"next one needs fixing:
-"inoremap <C-p> <Esc>"+p
-inoremap <C-y> <Esc>"+y
-
-" save read-only file with sudo trick
-cnoremap w!! w !sudo tee > /dev/null %
-
-" move between split views
-nnoremap <C-H> <C-W><C-H>
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-inoremap <C-H> <Esc><C-W><C-H>
-inoremap <C-J> <Esc><C-W><C-J>
-inoremap <C-K> <Esc><C-W><C-K>
-inoremap <C-L> <Esc><C-W><C-L>
-
-" move to start or end of line more easily
-nnoremap H 0
-nnoremap L $
-vnoremap H 0
-vnoremap L g_
-
-" resize splits
-nnoremap <silent> <Up> :res -1<CR>
-nnoremap <silent> <Down> :res +1<CR>
-nnoremap <silent> <Left> :vertical resize -5<CR>
-nnoremap <silent> <Right> :vertical resize +5<CR>
-
-" toggle search highlight
-nnoremap <Leader>h :set hlsearch!<CR>
-
-" shortcuts to open files
-cnoremap modrc e ~/.vimrc<CR>
-
-
-"------------------------------------------------------------------"
 " Misc                                                             "
 "------------------------------------------------------------------"
 
@@ -232,23 +94,24 @@ cnoremap modrc e ~/.vimrc<CR>
 	    \ |   exe "normal! g`\""
 	    \ | endif
 
-" set wiki path
-let g:vimwiki_list = [{'path': '~/work/research/research.wiki/', 'path_html': '~/work/research/research.wiki.html/'}]
-
 " netrw
 nmap <C-n> :Explore<CR>
 nmap <C-t> :Texplore<CR>
 let g:netrw_sort_sequence='[\/]$'
+
+
 
 "------------------------------------------------------------------"
 " vimlab setup
 "------------------------------------------------------------------"
 
 " vim-slime 
-let g:slime_target = "tmux"
-let g:slime_dont_ask_default = 1
-let g:slime_default_config = {"socket_name": "default", "target_pane": "1"}
-let g:slime_paste_file = "/tmp/slime_paste"
+if hostname() == "zenbook"
+    let g:slime_target = "tmux"
+    let g:slime_dont_ask_default = 1
+    let g:slime_default_config = {"socket_name": "default", "target_pane": "1"}
+    let g:slime_paste_file = "/tmp/slime_paste"
+endif
 
 " mlint code checking 
 if hostname() == "zenbook"
@@ -256,7 +119,7 @@ if hostname() == "zenbook"
 else
     let g:mlint_path_to_mlint = "to be filled in later"
 endif
-let g:mlint_hover = 1
+let g:mlint_hover = 0
 
 " session saving
 let g:vimlab_session = "~/.cache/vim/sessions/matlab-session.vim"
