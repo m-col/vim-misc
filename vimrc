@@ -41,8 +41,7 @@ filetype plugin indent on    " required
 "------------------------------------------------------------------"
 
 set hidden			" allow opening new buffers without saving first
-set lazyredraw			" dont update screen during macros/scripts
-"set showmatch			" Highlight matching brace
+"set lazyredraw			" dont update screen during macros/scripts
 set hlsearch			" Highlight all search results - toggled by <Leader>h
 set smartcase			" searches ignore case only if all lower case
 set incsearch			" Searches for strings while typing search term
@@ -58,20 +57,21 @@ set backspace=indent,eol,start	" Backspace behaviour
 set formatoptions+=j		" Delete comment characters when joining lines.
 autocmd FileType * setlocal formatoptions-=cro    " disable autocommenting
 
-set undolevels=100		" Number of undo levels
-set dir^=~/.cache/vim/swap//	" where to store swapfiles
-set backupdir=~/.cache/vim	" where to store backups
+set undolevels=50		" Number of undo levels
+set dir^=~/.vim/swap//		" where to store swapfiles
+set backupdir=~/.vim/backups/	" where to store backups
 
 set splitbelow			" default new sp window goes below
 set splitright			" default new vsp window goes right
-set scrolloff=15		" keep x lines at top and bottom visible when scrolling
+set scrolloff=12		" keep x lines at top and bottom visible when scrolling
 autocmd VimResized * wincmd =	" keep splits equal size when resizing window
 
 syntax on			" enable syntax highlighting
 set mouse=a			" enable mouse
 set t_Co=16			" use the 16 terminal colours
 
-set sessionoptions-=options	" do not store global and local values in a session
+set sessionoptions=buffers,folds,tabpages
+set viewoptions=folds,cursor
 
 set wildmenu			" enable wildmenu for tab completion of commands
 set wildmode=longest:list,full	" format wildmenu to expand and scroll with tab
@@ -115,15 +115,11 @@ endif
 
 " mlint code checking 
 if hostname() == "zenbook"
-    let g:mlint_path_to_mlint = "/home/mlv/applications/MATLAB/R2018b/bin/glnxa64/mlint"
+    let g:mlint_path_to_mlint = expand("$HOME") . "/applications/MATLAB/R2018b/bin/glnxa64/mlint"
 else
     let g:mlint_path_to_mlint = "to be filled in later"
 endif
 let g:mlint_hover = 0
 
 " session saving
-let g:vimlab_session = "~/.cache/vim/sessions/matlab-session.vim"
-
-" I am using this for debugging
-cmap test echo synIDattr(synIDtrans(synID(line("."), col("."), 0)), "name")<CR>
-
+let g:vimlab_session = "~/.vim/sessions/matlab-session.vim"

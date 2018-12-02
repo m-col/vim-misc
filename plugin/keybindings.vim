@@ -13,7 +13,6 @@ nnoremap <leader>b :ls<CR>:b<space>
 nnoremap <Leader>v :ls<CR>:vert sb<space>
 nnoremap <Leader>j :bnext<CR> 
 nnoremap <Leader>k :bprevious<CR>
-nnoremap <silent> <BS> :bdelete<CR>
 nnoremap <Leader><BS> :w<CR>:bdelete<CR>
 
 " move between tabs

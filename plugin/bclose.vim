@@ -75,21 +75,13 @@ endfunction
 command! -bang -complete=buffer -nargs=? Bclose call s:Bclose('<bang>', '<args>')
 
 
-""""" These are left in case the above is not ideal
-"function! CloseIfLastBuffer()
-"    if len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1 
-"    let g:fromFile=expand('%:p')
-"    execute "q"
-"    execute "bd"
-"endfunction
-"nnoremap <BS> :call CloseIfLastBuffer()<CR>
-
-"autocmd BufDelete * if len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1 | quit | endif
-"autocmd BufDelete * if len(filter(range(1, bufnr('$')), '! empty(bufname(v:val)) && buflisted(v:val)')) == 1 | quit | endif
 
 
 
-if v:this_session == expand("$HOME") . ".cache/vim/sessions/matlab-session.vim"
-    nnoremap <buffer> <silent> <BS> :Bclose<CR>
+if v:servername == "VIMLAB"
+    nnoremap <buffer> <silent> <BS> <Plug>Kwbd
+else
+    autocmd BufDelete * if len(filter(range(1, bufnr('$')), 'empty(bufname(v:val)) && buflisted(v:val)')) == 1 && v:servername != "VIMLAB" | quit | endif
 endif
 
+nnoremap <silent> <BS> :Bclose<CR>

@@ -1,5 +1,6 @@
+"------------------------------------------------------------------"
 " Highlight all instances of word under cursor, when idle.
-nnoremap <bar> :if AutoHighlightToggle()<Bar>set hls<Bar>endif<CR>
+"------------------------------------------------------------------"
 function! AutoHighlightToggle()
   let @/ = ''
   if exists('#auto_highlight')
@@ -18,3 +19,5 @@ function! AutoHighlightToggle()
     return 1
   endif
 endfunction
+
+nnoremap <bar> :if AutoHighlightToggle()<Bar>set hls<Bar>endif<CR>
