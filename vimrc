@@ -19,11 +19,12 @@ set rtp+=~/.vim/bundle/Vundle.vim   " required
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'	" required
-"Plugin 'ervandew/supertab'	" better tab completion
-Plugin 'jpalardy/vim-slime'	" send text to IDE and execute
+Plugin 'mcolligan/vim-misc'	" my vimrc and misc functions 
 Plugin 'vimwiki/vimwiki'	" vimwiki
 Plugin 'mcolligan/vimlab'	" vimlab
-Plugin 'mcolligan/vim-misc'	" misc functions
+Plugin 'mcolligan/tide'		" tmux ide
+Plugin 'jpalardy/vim-slime'	" send text to IDE and execute
+Plugin 'christoomey/vim-tmux-navigator'	    " navigate vim and tmux splits seamless
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -46,6 +47,7 @@ set hlsearch			" Highlight all search results - toggled by <Leader>h
 set smartcase			" searches ignore case only if all lower case
 set incsearch			" Searches for strings while typing search term
 set gdefault			" use global by default for substitutions
+set nowrap			" don't wrap really long lines
 
 set shiftwidth=4		" Default number of auto-indent spaces
 set autoindent			" Auto-indent new lines

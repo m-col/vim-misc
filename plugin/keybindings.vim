@@ -47,15 +47,21 @@ inoremap <C-y> <Esc>"+y
 " save read-only file with sudo trick
 cnoremap w!! w !sudo tee > /dev/null %
 
-" move between split views
-nnoremap <C-H> <C-W><C-H>
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-inoremap <C-H> <Esc><C-W><C-H>
-inoremap <C-J> <Esc><C-W><C-J>
-inoremap <C-K> <Esc><C-W><C-K>
-inoremap <C-L> <Esc><C-W><C-L>
+" move between split views (these are configured by the vim-tmux plugin)
+" except for insert mode:
+inoremap <silent> <C-H> <Esc>:TmuxNavigateLeft<cr>
+inoremap <silent> <C-J> <Esc>:TmuxNavigateDown<cr>
+inoremap <silent> <C-K> <Esc>:TmuxNavigateUp<cr>
+inoremap <silent> <C-L> <Esc>:TmuxNavigateRight<cr>
+inoremap <silent> <C-\> <Esc>:TmuxNavigatePrevious<cr>
+"nnoremap <C-H> <C-W><C-H>
+"nnoremap <C-J> <C-W><C-J>
+"nnoremap <C-K> <C-W><C-K>
+"nnoremap <C-L> <C-W><C-L>
+"inoremap <C-H> <Esc><C-W><C-H>
+"inoremap <C-J> <Esc><C-W><C-J>
+"inoremap <C-K> <Esc><C-W><C-K>
+"inoremap <C-L> <Esc><C-W><C-L>
 
 " move to start or end of line more easily
 nnoremap H 0
