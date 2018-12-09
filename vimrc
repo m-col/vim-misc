@@ -24,7 +24,7 @@ Plugin 'vimwiki/vimwiki'	" vimwiki
 Plugin 'mcolligan/vimlab'	" vimlab
 Plugin 'mcolligan/tide'		" tmux ide
 Plugin 'jpalardy/vim-slime'	" send text to IDE and execute
-Plugin 'christoomey/vim-tmux-navigator'	    " navigate vim and tmux splits seamless
+Plugin 'christoomey/vim-tmux-navigator'	    " navigate vim and tmux splits seamlessly
 
 call vundle#end()            " required
 filetype plugin indent on    " required
