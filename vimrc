@@ -41,8 +41,11 @@ filetype plugin indent on    " required
 " General settings                                                 "
 "------------------------------------------------------------------"
 
+set autoread			" update when file is modified outside of vim
+set autowrite			" save file automatically
+au FocusLost * :silent! wall	" save all changed buffers when vim loses focus
 set hidden			" allow opening new buffers without saving first
-"set lazyredraw			" dont update screen during macros/scripts
+set lazyredraw			" dont update screen during macros/scripts
 set hlsearch			" Highlight all search results - toggled by <Leader>h
 set smartcase			" searches ignore case only if all lower case
 set incsearch			" Searches for strings while typing search term
@@ -58,19 +61,23 @@ set linebreak			" Allow backspacing over indention, line breaks and insertion st
 set backspace=indent,eol,start	" Backspace behaviour
 set formatoptions+=j		" Delete comment characters when joining lines.
 autocmd FileType * setlocal formatoptions-=cro    " disable autocommenting
+set matchtime=3
 
-set undolevels=50		" Number of undo levels
-set dir^=~/.vim/swap//		" where to store swapfiles
-set backupdir=~/.vim/backups/	" where to store backups
+set undolevels=100		" Number of undo levels
+set undodir=~/.vim/undo//	" undo files
+set backupdir=~/.vim/backups//	" backups
+set directory=~/.vim/swap//	" swap files
+set noswapfile
 
 set splitbelow			" default new sp window goes below
 set splitright			" default new vsp window goes right
-set scrolloff=12		" keep x lines at top and bottom visible when scrolling
+set scrolloff=12		" keep x lines at top and bottom visible when scrollingkeep x lines at top and bottom visible when scrolling
 autocmd VimResized * wincmd =	" keep splits equal size when resizing window
 
 syntax on			" enable syntax highlighting
 set mouse=a			" enable mouse
 set t_Co=16			" use the 16 terminal colours
+set ttyfast
 
 set sessionoptions=buffers,folds,tabpages
 set viewoptions=folds,cursor
@@ -91,7 +98,7 @@ set autochdir			" cwd to current file
 "------------------------------------------------------------------"
 
 " restore last line in opened file
-:au BufReadPost *
+au BufReadPost *
 	    \ if line("'\"") > 1 && line("'\"") <= line("$") && &ft !~# 'commit'
 	    \ |   exe "normal! g`\""
 	    \ | endif
@@ -107,13 +114,13 @@ let g:netrw_sort_sequence='[\/]$'
 " vimlab setup
 "------------------------------------------------------------------"
 
-" vim-slime 
-if hostname() == "zenbook"
-    let g:slime_target = "tmux"
-    let g:slime_dont_ask_default = 1
-    let g:slime_default_config = {"socket_name": "default", "target_pane": "1"}
-    let g:slime_paste_file = "/tmp/slime_paste"
-endif
+"" vim-slime 
+"if hostname() == "zenbook"
+"    let g:slime_target = "tmux"
+"    let g:slime_dont_ask_default = 1
+"    let g:slime_default_config = {"socket_name": "default", "target_pane": "1"}
+"    let g:slime_paste_file = "/tmp/slime_paste"
+"endif
 
 " mlint code checking 
 if hostname() == "zenbook"

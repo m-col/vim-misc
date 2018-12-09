@@ -41,7 +41,7 @@ hi LineNr ctermfg=5
 highlight CursorLine ctermbg=8 cterm=bold
 augroup CursorLine
     au!
-    au VimEnter,WinEnter,BufWinEnter * setlocal  cursorline
+    au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
     au WinLeave * setlocal nocursorline
 augroup END
 
@@ -54,4 +54,5 @@ augroup myCmds
 augroup END
 
 " character for line in split
-set fillchars=vert:\|    
+set fillchars=vert:\ 
+hi VertSplit cterm=bold term=bold ctermbg=12
