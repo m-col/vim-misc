@@ -18,12 +18,13 @@ filetype off			    " required
 set rtp+=~/.vim/bundle/Vundle.vim   " required
 call vundle#begin()
 
-Plugin 'VundleVim/Vundle.vim'	" required
-Plugin 'mcolligan/vim-misc'	" my vimrc and misc functions 
-Plugin 'vimwiki/vimwiki'	" vimwiki
-Plugin 'mcolligan/vimlab'	" vimlab
-Plugin 'mcolligan/tide'		" tmux ide
-Plugin 'jpalardy/vim-slime'	" send text to IDE and execute
+Plugin 'VundleVim/Vundle.vim'	    " required
+Plugin 'mcolligan/vim-misc'	    " my vimrc and misc functions 
+Plugin 'vimwiki/vimwiki'	    " vimwiki
+Plugin 'mcolligan/vimlab'	    " vimlab
+Plugin 'mcolligan/tide'		    " tmux ide
+Plugin 'mcolligan/argtextobj.vim'   " function argument text object
+"Plugin 'jpalardy/vim-slime'	    " send text to IDE and execute
 Plugin 'christoomey/vim-tmux-navigator'	    " navigate vim and tmux splits seamlessly
 
 call vundle#end()            " required
@@ -42,9 +43,8 @@ filetype plugin indent on    " required
 "------------------------------------------------------------------"
 
 set autoread			" update when file is modified outside of vim
-set autowrite			" save file automatically
-au FocusLost * :silent! wall	" save all changed buffers when vim loses focus
-set hidden			" allow opening new buffers without saving first
+au BufLeave * :silent! update	" save automatically when leaving buffer
+"set hidden			" allow opening new buffers without saving first
 set lazyredraw			" dont update screen during macros/scripts
 set hlsearch			" Highlight all search results - toggled by <Leader>h
 set smartcase			" searches ignore case only if all lower case
@@ -108,7 +108,8 @@ nmap <C-n> :Explore<CR>
 nmap <C-t> :Texplore<CR>
 let g:netrw_sort_sequence='[\/]$'
 
-
+" function text object: force top level
+let g:argumentobject_force_toplevel = 1
 
 "------------------------------------------------------------------"
 " vimlab setup
