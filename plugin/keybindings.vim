@@ -77,3 +77,6 @@ nnoremap <silent> <Right> :vertical resize +5<CR>
 
 " toggle search highlight
 nnoremap <Leader>h :set hlsearch!<CR>
+
+" shortcut to fix lines
+nnoremap <leader>p gqip
