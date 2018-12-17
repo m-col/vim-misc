@@ -20,11 +20,12 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'	    " required
 Plugin 'mcolligan/vim-misc'	    " my vimrc and misc functions 
-Plugin 'vimwiki/vimwiki'	    " vimwiki
 Plugin 'mcolligan/vimlab'	    " vimlab
 Plugin 'mcolligan/tide'		    " tmux ide
 Plugin 'mcolligan/argtextobj.vim'   " function argument text object
 Plugin 'christoomey/vim-tmux-navigator'	    " navigate vim and tmux splits seamlessly
+Plugin 'vimwiki/vimwiki'	    " vimwiki
+Plugin 'sjl/vitality.vim'	    " restore Focus aucommands for terminal
 
 call vundle#end()            " required
 filetype plugin indent on    " required
