@@ -24,7 +24,6 @@ Plugin 'vimwiki/vimwiki'	    " vimwiki
 Plugin 'mcolligan/vimlab'	    " vimlab
 Plugin 'mcolligan/tide'		    " tmux ide
 Plugin 'mcolligan/argtextobj.vim'   " function argument text object
-"Plugin 'jpalardy/vim-slime'	    " send text to IDE and execute
 Plugin 'christoomey/vim-tmux-navigator'	    " navigate vim and tmux splits seamlessly
 
 call vundle#end()            " required
@@ -43,8 +42,8 @@ filetype plugin indent on    " required
 "------------------------------------------------------------------"
 
 set autoread			" update when file is modified outside of vim
+set autowrite			" update file when changing buffers, opening new files, etc
 au BufLeave * :silent! update	" save automatically when leaving buffer
-"set hidden			" allow opening new buffers without saving first
 set lazyredraw			" dont update screen during macros/scripts
 set hlsearch			" Highlight all search results - toggled by <Leader>h
 set smartcase			" searches ignore case only if all lower case
