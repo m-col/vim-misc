@@ -34,6 +34,9 @@ nnoremap :W :w
 " yank to end of line
 nnoremap Y y$
 
+" disable K man
+nnoremap K k
+
 " copy and paste system clipboard
 nnoremap <C-p> "+p
 nnoremap <C-y> "+y
