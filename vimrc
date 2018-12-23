@@ -25,7 +25,6 @@ Plugin 'mcolligan/tide'		    " tmux ide
 Plugin 'mcolligan/argtextobj.vim'   " function argument text object
 Plugin 'christoomey/vim-tmux-navigator'	    " navigate vim and tmux splits seamlessly
 Plugin 'vimwiki/vimwiki'	    " vimwiki
-Plugin 'sjl/vitality.vim'	    " restore Focus aucommands for terminal
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -50,7 +49,6 @@ set hlsearch			" Highlight all search results - toggled by <Leader>h
 set smartcase			" searches ignore case only if all lower case
 set incsearch			" Searches for strings while typing search term
 set gdefault			" use global by default for substitutions
-set nowrap			" don't wrap really long lines
 
 set shiftwidth=4		" Default number of auto-indent spaces
 set autoindent			" Auto-indent new lines
@@ -61,9 +59,9 @@ set linebreak			" Allow backspacing over indention, line breaks and insertion st
 set backspace=indent,eol,start	" Backspace behaviour
 set formatoptions+=j		" Delete comment characters when joining lines.
 autocmd FileType * setlocal formatoptions-=cro    " disable autocommenting
-set matchtime=3
+set matchtime=2
 
-set undolevels=100		" Number of undo levels
+set undolevels=200		" Number of undo levels
 set undodir=~/.vim/undo//	" undo files
 set backupdir=~/.vim/backups//	" backups
 set directory=~/.vim/swap//	" swap files
@@ -71,19 +69,20 @@ set noswapfile
 
 set splitbelow			" default new sp window goes below
 set splitright			" default new vsp window goes right
-set scrolloff=12		" keep x lines at top and bottom visible when scrollingkeep x lines at top and bottom visible when scrolling
+set scrolloff=10		" keep x lines at top and bottom visible when scrollingkeep x lines at top and bottom visible when scrolling
 autocmd VimResized * wincmd =	" keep splits equal size when resizing window
 
 syntax on			" enable syntax highlighting
 set mouse=a			" enable mouse
 set t_Co=16			" use the 16 terminal colours
-set ttyfast
+"set ttyfast
 
 set sessionoptions=buffers,folds,tabpages
 set viewoptions=folds,cursor
 
 set wildmenu			" enable wildmenu for tab completion of commands
-set wildmode=longest:list,full	" format wildmenu to expand and scroll with tab
+set wildignorecase		" disable wildmenu case sensitivity
+set wildmode=full:list		" format wildmenu to expand and scroll with tab
 
 if hostname() == "zenbook"
     packadd! matchit		" needed for matlab indentation functionality
@@ -111,17 +110,10 @@ let g:netrw_sort_sequence='[\/]$'
 " function text object: force top level
 let g:argumentobject_force_toplevel = 1
 
+
 "------------------------------------------------------------------"
 " vimlab setup
 "------------------------------------------------------------------"
-
-"" vim-slime 
-"if hostname() == "zenbook"
-"    let g:slime_target = "tmux"
-"    let g:slime_dont_ask_default = 1
-"    let g:slime_default_config = {"socket_name": "default", "target_pane": "1"}
-"    let g:slime_paste_file = "/tmp/slime_paste"
-"endif
 
 " mlint code checking 
 if hostname() == "zenbook"
