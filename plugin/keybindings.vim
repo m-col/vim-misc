@@ -83,3 +83,9 @@ nnoremap <Leader>h :set hlsearch!<CR>
 
 " shortcut to fix lines
 nnoremap <leader>p gqip
+
+" shortcut to vert split
+nnoremap vs :vsp<CR>
+
+" toggle spell checking
+nnoremap <leader>S :setlocal spell! spelllang=en_gb spell?<CR>

@@ -18,6 +18,12 @@ hi User3 ctermfg=0 ctermbg=14 cterm=none
 hi User4 ctermfg=0 ctermbg=2 cterm=none 
 hi User5 ctermfg=0 ctermbg=3 cterm=none 
 
+" tab bar
+hi TabLineFill ctermfg=0 ctermbg=1
+hi TabLine ctermfg=0 ctermbg=13
+hi TabLineSel ctermfg=0 ctermbg=12
+hi Title ctermfg=0 ctermbg=12
+
 " vimdiff
 hi DiffAdd      cterm=none ctermfg=0 ctermbg=2
 hi DiffChange   cterm=none ctermfg=0 ctermbg=4

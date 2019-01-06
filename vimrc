@@ -107,21 +107,13 @@ nmap <C-n> :Explore<CR>
 nmap <C-t> :Texplore<CR>
 let g:netrw_sort_sequence='[\/]$'
 
-" function text object: force top level
-let g:argumentobject_force_toplevel = 1
-
-
-"------------------------------------------------------------------"
-" vimlab setup
-"------------------------------------------------------------------"
-
-" mlint code checking 
+" machine specific settings
 if hostname() == "zenbook"
     let g:mlint_path_to_mlint = expand("$HOME") . "/applications/MATLAB/R2018b/bin/glnxa64/mlint"
+    let g:vimwiki_list = [{'path': '~/work/research/research.wiki/', 'path_html': '~/work/research/research.wiki.html/'}]
 else
     let g:mlint_path_to_mlint = "to be filled in later"
 endif
-let g:mlint_hover = 0
 
 " session saving
 let g:vimlab_session = "~/.vim/sessions/matlab-session.vim"
