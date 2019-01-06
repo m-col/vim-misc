@@ -22,7 +22,6 @@ Plugin 'VundleVim/Vundle.vim'	    " required
 Plugin 'mcolligan/vim-misc'	    " my vimrc and misc functions 
 Plugin 'mcolligan/vimlab'	    " vimlab
 Plugin 'mcolligan/tide'		    " tmux ide
-Plugin 'mcolligan/argtextobj.vim'   " function argument text object
 Plugin 'christoomey/vim-tmux-navigator'	    " navigate vim and tmux splits seamlessly
 Plugin 'vimwiki/vimwiki'	    " vimwiki
 
