@@ -45,8 +45,4 @@ nmap <Leader>o 0f\|lvt]y:let a = substitute(@*, ' ', '_', 'g') \| !qpdfview --un
 " update papers page with new pdf files
 nmap <Leader>u :!vimwiki_add_papers.sh<CR>
 
-
-
 setlocal textwidth=80
-
-

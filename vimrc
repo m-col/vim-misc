@@ -22,6 +22,7 @@ Plugin 'VundleVim/Vundle.vim'	    " required
 Plugin 'mcolligan/vim-misc'	    " my vimrc and misc functions 
 Plugin 'mcolligan/vimlab'	    " vimlab
 Plugin 'mcolligan/tide'		    " tmux ide
+Plugin 'git@192.168.0.65:/media/usbhdd1/git/vim-myspell'    " my spelling
 Plugin 'christoomey/vim-tmux-navigator'	    " navigate vim and tmux splits seamlessly
 Plugin 'vimwiki/vimwiki'	    " vimwiki
 

@@ -88,4 +88,4 @@ nnoremap <leader>p gqip
 nnoremap vs :vsp<CR>
 
 " toggle spell checking
-nnoremap <leader>S :setlocal spell! spelllang=en_gb spell?<CR>
+nnoremap <leader>S :setlocal spell! spelllang=en_gb spell?<CR>:echo "zg to add new word"<CR>
