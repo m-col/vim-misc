@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+# vim-misc directory 
+dir="source $(dirname "$(readlink -f "$0")")"
+
+echo "source $dir/vimrc" >> ~/.vimrc
+echo "source $dir/tmux.conf" >> ~/.tmux.conf
