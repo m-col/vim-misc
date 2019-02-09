@@ -1,14 +1,30 @@
 #!/usr/bin/env bash
 
 # vim-misc directory 
-dir="source $(dirname "$(readlink -f "$0")")"
+#dir="source $(dirname "$(readlink -f "$0")")"
+dir="$HOME/.vim/bundle/vim-misc"
 
-echo "source $dir/vimrc" >> ~/.vimrc
-echo "source $dir/tmux.conf" >> ~/.tmux.conf
+if [[ -f $HOME/.vimrc ]]
+then
+    mv $HOME/.vimrc $HOME/.vimrc.backup
+    echo '~/.vimrc was moved to ~/.vimrc/backup'
+fi
+echo "source $dir/vimrc" > ~/.vimrc
 
-add_dir() { [[ ! -d $1 ]] && mkdir -p $1 }
-add_dir $HOME/backups
-add_dir $HOME/sessions
-add_dir $HOME/swap
-add_dir $HOME/undo
-add_dir $HOME/spell
+if [[ -f $HOME/.tmux.conf ]]
+then
+    mv $HOME/.tmux.conf $HOME/.tmux.conf.backup
+    echo '~/.tmux.conf was moved to ~/.tmuf.conf.backup'
+fi
+echo "source $dir/tmux.conf" > ~/.tmux.conf
+
+add_dir() {
+    [[ ! -d $1 ]] && mkdir -p $1
+}
+add_dir $HOME/.vim/backups
+add_dir $HOME/.vim/sessions
+add_dir $HOME/.vim/swap
+add_dir $HOME/.vim/undo
+add_dir $HOME/.vim/spell
+
+echo 'open vim and run PluginInstall'
