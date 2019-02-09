@@ -19,16 +19,19 @@ set rtp+=~/.vim/bundle/Vundle.vim   " required
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'	    " required
+if hostname() == "zenbook"
+    Plugin 'mcolligan/vimlab'	    " vimlab
+    Plugin 'git@192.168.0.65:/media/usbhdd1/git/vim-myspell'    " my spelling
+    Plugin 'vimwiki/vimwiki'	    " vimwiki
+endif
+Plugin 'junegunn/goyo.vim'
 Plugin 'mcolligan/vim-misc'	    " my vimrc and misc functions 
-Plugin 'mcolligan/vimlab'	    " vimlab
 Plugin 'mcolligan/tide'		    " tmux ide
-Plugin 'git@192.168.0.65:/media/usbhdd1/git/vim-myspell'    " my spelling
 Plugin 'christoomey/vim-tmux-navigator'	    " navigate vim and tmux splits seamlessly
-Plugin 'vimwiki/vimwiki'	    " vimwiki
 
 call vundle#end()            " required
 filetype plugin indent on    " required
-"
+
 " Brief help
 " :PluginList       - lists configured plugins
 " :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
@@ -84,10 +87,6 @@ set wildmenu			" enable wildmenu for tab completion of commands
 set wildignorecase		" disable wildmenu case sensitivity
 set wildmode=full:list		" format wildmenu to expand and scroll with tab
 
-if hostname() == "zenbook"
-    packadd! matchit		" needed for matlab indentation functionality
-endif
-
 set autochdir			" cwd to current file
 
 
@@ -109,10 +108,9 @@ let g:netrw_sort_sequence='[\/]$'
 
 " machine specific settings
 if hostname() == "zenbook"
+    packadd! matchit		" needed for matlab indentation functionality
     let g:mlint_path_to_mlint = expand("$HOME") . "/applications/MATLAB/R2018b/bin/glnxa64/mlint"
     let g:vimwiki_list = [{'path': '~/work/research/research.wiki/', 'path_html': '~/work/research/research.wiki.html/'}]
-else
-    let g:mlint_path_to_mlint = "to be filled in later"
 endif
 
 " session saving
