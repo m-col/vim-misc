@@ -21,7 +21,6 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'	    " required
 if hostname() == "zenbook"
     Plugin 'mcolligan/vimlab'	    " vimlab
-    Plugin 'git@192.168.0.65:/media/usbhdd1/git/vim-myspell'    " my spelling
     Plugin 'vimwiki/vimwiki'	    " vimwiki
 endif
 Plugin 'junegunn/goyo.vim'

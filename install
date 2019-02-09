@@ -11,3 +11,4 @@ add_dir $HOME/backups
 add_dir $HOME/sessions
 add_dir $HOME/swap
 add_dir $HOME/undo
+add_dir $HOME/spell
