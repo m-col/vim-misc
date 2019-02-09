@@ -36,6 +36,9 @@ hi Folded ctermbg=8 ctermfg=4 cterm=none
 " visual mode highlighting
 hi Visual ctermbg=7 ctermfg=0
 
+" title highlighting needs changing so that text doesn't go invisible due to cursor line
+hi Title ctermfg=3 ctermbg=0
+
 " matched brackets
 hi MatchParen ctermfg=7 cterm=underline ctermbg=0 
 
@@ -59,6 +62,6 @@ augroup myCmds
     autocmd VimEnter * silent !echo -ne "\e[2 q"
 augroup END
 
-" character for line in split
+" character for split barrier
 set fillchars=vert:\ 
 hi VertSplit cterm=bold term=bold ctermbg=12
