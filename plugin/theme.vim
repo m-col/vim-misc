@@ -5,18 +5,21 @@
 " statusline
 set laststatus=2			    " always show status bar
 set statusline =
+if ! empty($TMUX)
+    set statusline +=%6*%*
+endif
 set statusline +=%1*\ \ %<%F\ \ %*	    " full path
 set statusline +=%2*\ \ %y%*                " file type
 set statusline +=%2*\ %m\ %*                " modified flag
 set statusline +=%3*%=%*		    " centre padding
 set statusline +=%4*\ \ %l\ /\ %L\ \ %*	    " current / total lines
-set statusline +=%5*\ %n\ %*		    " buffer number
-
+set statusline +=%5*\ %n\ %*		    " buffer number 
 hi User1 ctermfg=0 ctermbg=5 cterm=none 
 hi User2 ctermfg=0 ctermbg=4 cterm=none 
 hi User3 ctermfg=0 ctermbg=14 cterm=none 
 hi User4 ctermfg=0 ctermbg=2 cterm=none 
 hi User5 ctermfg=0 ctermbg=3 cterm=none 
+hi User6 ctermfg=3 ctermbg=5 cterm=none 
 
 " tab bar
 hi TabLineFill ctermfg=0 ctermbg=1
