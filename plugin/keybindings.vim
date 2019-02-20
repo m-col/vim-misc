@@ -67,6 +67,7 @@ inoremap <silent> <C-\> <Esc>:TmuxNavigatePrevious<cr>
 "inoremap <C-L> <Esc><C-W><C-L>
 
 " move to start or end of line more easily
+nnoremap 0 ^
 nnoremap H 0
 nnoremap L $
 vnoremap H 0
@@ -89,3 +90,16 @@ nnoremap vs :vsp<CR>
 
 " toggle spell checking
 nnoremap <leader>S :setlocal spell! spelllang=en_gb spell?<CR>:echo "zg to add new word"<CR>
+
+" toggle [ ] tick box on current line with ctrl-space
+function! ToggleTodo()
+    let l:line = getline('.')
+    if match(l:line, '\[x\]') != -1
+	let l:line = substitute(l:line, '\[x\]', '\[ \]', '')
+	call setline('.', l:line)
+    elseif match(l:line, '\[ \]') != -1
+	let l:line = substitute(l:line, '\[ \]', '\[x\]', '')
+	call setline('.', l:line)
+    endif
+endfunction
+nnoremap <silent> <C-@> :call ToggleTodo()<CR>
