@@ -5,6 +5,10 @@
 " statusline
 set laststatus=2			    " always show status bar
 set statusline =
+if $USER == 'root'
+    let hostname = hostname()
+    exec 'set statusline +=%7*\ ' . $USER . '@' . hostname . '\ %*'
+endif
 if ! empty($TMUX)
     set statusline +=%6*%*
 endif
@@ -20,6 +24,7 @@ hi User3 ctermfg=0 ctermbg=14 cterm=none
 hi User4 ctermfg=0 ctermbg=2 cterm=none 
 hi User5 ctermfg=0 ctermbg=3 cterm=none 
 hi User6 ctermfg=3 ctermbg=5 cterm=none 
+hi User7 ctermfg=0 ctermbg=9 cterm=none
 
 " tab bar
 hi TabLineFill ctermfg=0 ctermbg=1
