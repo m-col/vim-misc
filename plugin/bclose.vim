@@ -69,8 +69,8 @@ function! s:Bclose(bang, buffer)
 	    endif
 	endif
     endfor
-    execute 'bdelete'.a:bang.' '.btarget
-    execute wcurrent.'wincmd w'
+    silent! execute 'bdelete'.a:bang.' '.btarget
+    silent! execute wcurrent.'wincmd w'
 endfunction
 command! -bang -complete=buffer -nargs=? Bclose call s:Bclose('<bang>', '<args>')
 
