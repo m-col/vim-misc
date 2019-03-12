@@ -26,7 +26,7 @@ endif
 Plugin 'junegunn/goyo.vim'
 Plugin 'mcolligan/vim-misc'		    " my vimrc and misc functions 
 Plugin 'mcolligan/tide'			    " tmux ide
-Plugin 'christoomey/vim-tmux-navigator'	    " navigate vim and tmux splits seamlessly
+"Plugin 'christoomey/vim-tmux-navigator'	    " navigate vim and tmux splits seamlessly
 
 call vundle#end()			    " required
 filetype plugin indent on		    " required
@@ -114,3 +114,9 @@ endif
 
 " session saving
 let g:vimlab_session = "~/.vim/sessions/matlab-session.vim"
+
+" Intelligently navigate tmux panes and Vim splits using the same keys.
+" See https://sunaku.github.io/tmux-select-pane.html for documentation.
+let progname = substitute($VIM, '.*[/\\]', '', '')
+set title titlestring=%{progname}\ %f\ +%l\ #%{tabpagenr()}.%{winnr()}
+if &term =~ '^screen' && !has('nvim') | exe "set t_ts=\e]2; t_fs=\7" | endif
