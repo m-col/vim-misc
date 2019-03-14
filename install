@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 # vim-misc directory 
-#dir="source $(dirname "$(readlink -f "$0")")"
 dir="$HOME/.vim/bundle/vim-misc"
 
 if [[ -f $HOME/.vimrc ]]
@@ -18,13 +17,10 @@ then
 fi
 echo "source $dir/tmux.conf" > ~/.tmux.conf
 
-add_dir() {
-    [[ ! -d $1 ]] && mkdir -p $1
-}
-add_dir $HOME/.vim/backups
-add_dir $HOME/.vim/sessions
-add_dir $HOME/.vim/swap
-add_dir $HOME/.vim/undo
-add_dir $HOME/.vim/spell
+mkdir -p $HOME/.vim/backups
+mkdir -p $HOME/.vim/sessions
+mkdir -p $HOME/.vim/swap
+mkdir -p $HOME/.vim/undo
+mkdir -p $HOME/.vim/spell
 
 echo 'open vim and run PluginInstall'
