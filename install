@@ -6,7 +6,7 @@ dir="$HOME/.vim/bundle/vim-misc"
 if [[ -f $HOME/.vimrc ]]
 then
     mv $HOME/.vimrc $HOME/.vimrc.backup
-    echo '~/.vimrc was moved to ~/.vimrc/backup'
+    echo '~/.vimrc was moved to ~/.vimrc.backup'
 fi
 echo "source $dir/vimrc" > ~/.vimrc
 
