@@ -22,6 +22,7 @@ Plugin 'VundleVim/Vundle.vim'		    " required
 if hostname() == "zenbook"
     Plugin 'vimwiki/vimwiki'		    " vimwiki
     Plugin 'mcolligan/vimlab'		    " vimlab
+endif
 if hostname() == "ardbeg"
     Plugin 'mcolligan/vimlab'		    " vimlab
 endif
