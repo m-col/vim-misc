@@ -20,9 +20,9 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'		    " required
 if hostname() == "zenbook"
-    Plugin 'mcolligan/vimlab'		    " vimlab
     Plugin 'vimwiki/vimwiki'		    " vimwiki
 endif
+Plugin 'mcolligan/vimlab'		    " vimlab
 Plugin 'junegunn/goyo.vim'
 Plugin 'mcolligan/vim-misc'		    " my vimrc and misc functions 
 Plugin 'mcolligan/tide'			    " tmux ide
