@@ -19,17 +19,19 @@ set rtp+=~/.vim/bundle/Vundle.vim	    " required
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'		    " required
+
 if hostname() == "zenbook"
     Plugin 'vimwiki/vimwiki'		    " vimwiki
     Plugin 'mcolligan/vimlab'		    " vimlab
 endif
+
 if hostname() == "ardbeg"
     Plugin 'mcolligan/vimlab'		    " vimlab
 endif
+
 Plugin 'junegunn/goyo.vim'
 Plugin 'mcolligan/vim-misc'		    " my vimrc and misc functions 
 Plugin 'mcolligan/tide'			    " tmux ide
-"Plugin 'christoomey/vim-tmux-navigator'	    " navigate vim and tmux splits seamlessly
 
 call vundle#end()			    " required
 filetype plugin indent on		    " required
@@ -121,5 +123,9 @@ let g:vimlab_session = "~/.vim/sessions/matlab-session.vim"
 " Intelligently navigate tmux panes and Vim splits using the same keys.
 " See https://sunaku.github.io/tmux-select-pane.html for documentation.
 let progname = substitute($VIM, '.*[/\\]', '', '')
-set title titlestring=%{progname}\ %f\ +%l\ #%{tabpagenr()}.%{winnr()}
+if empty(v:servername)
+    set title titlestring=%{progname}\ [%n]\ %F
+else
+    set title titlestring=%{progname}\ [%{v:servername}]\ [%n]\ %F
+endif
 if &term =~ '^screen' && !has('nvim') | exe "set t_ts=\e]2; t_fs=\7" | endif
