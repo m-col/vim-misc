@@ -22,16 +22,16 @@ Plugin 'VundleVim/Vundle.vim'		    " required
 
 if hostname() == "zenbook"
     Plugin 'vimwiki/vimwiki'		    " vimwiki
-    Plugin 'mcolligan/vimlab'		    " vimlab
+    Plugin 'mclgn/vimlab'		    " vimlab
 endif
 
 if hostname() == "ardbeg"
-    Plugin 'mcolligan/vimlab'		    " vimlab
+    Plugin 'mclgn/vimlab'		    " vimlab
 endif
 
 Plugin 'junegunn/goyo.vim'
-Plugin 'mcolligan/vim-misc'		    " my vimrc and misc functions 
-Plugin 'mcolligan/tide'			    " tmux ide
+Plugin 'mclgn/vim-misc'		    " my vimrc and misc functions 
+Plugin 'mclgn/tide'			    " tmux ide
 
 call vundle#end()			    " required
 filetype plugin indent on		    " required
