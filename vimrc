@@ -23,6 +23,7 @@ Plugin 'VundleVim/Vundle.vim'		    " required
 if hostname() == "zenbook"
     Plugin 'vimwiki/vimwiki'		    " vimwiki
     Plugin 'mclgn/vimlab'		    " vimlab
+    Plugin 'lervag/vimtex'		    " vimtex
 endif
 
 if hostname() == "ardbeg"
@@ -115,6 +116,10 @@ if hostname() == "zenbook"
     packadd! matchit		" needed for matlab indentation functionality
     let g:mlint_path_to_mlint = expand("$HOME") . "/applications/MATLAB/R2018b/bin/glnxa64/mlint"
     let g:vimwiki_list = [{'path': '~/work/research/research.wiki/', 'path_html': '~/work/research/research.wiki.html/'}]
+
+    let g:vimtex_view_method = 'zathura'
+
+
 endif
 
 " session saving
