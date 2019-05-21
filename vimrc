@@ -134,3 +134,14 @@ else
     set title titlestring=%{progname}\ [%{v:servername}]\ [%n]\ %F
 endif
 if &term =~ '^screen' && !has('nvim') | exe "set t_ts=\e]2; t_fs=\7" | endif
+
+
+let g:vimtex_doc_handlers = ['Texdoc']
+function! Texdoc(context)
+    call vimtex#doc#make_selection(a:context)
+    if !empty(a:context.selected)
+	execute '!texdoc' a:context.selected '&'
+    endif
+    return 1
+endfunction
+
