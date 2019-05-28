@@ -135,7 +135,7 @@ else
 endif
 if &term =~ '^screen' && !has('nvim') | exe "set t_ts=\e]2; t_fs=\7" | endif
 
-
+" vimtex configuration
 let g:vimtex_doc_handlers = ['Texdoc']
 function! Texdoc(context)
     call vimtex#doc#make_selection(a:context)
@@ -145,3 +145,7 @@ function! Texdoc(context)
     return 1
 endfunction
 
+let g:vimtex_view_zathura_hook_callback = 'ViewerCallback'
+function! ViewerCallback() dict
+    VimtexView
+endfunction
