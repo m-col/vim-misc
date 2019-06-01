@@ -26,7 +26,7 @@ nmap <buffer> g<CR> /[[<CR><CR>
 nmap <buffer> <Leader>p 0f\|yy<CR>Pdf\|$xx===o<CR>
 
 " open pdf from papers page
-nmap <buffer> <Leader>o 0f\|lvt]y:let a = substitute(@*, ' ', '_', 'g') \| !qpdfview --unique "~/work/research/papers/" . a . ".pdf" &
+nmap <buffer> <Leader>o 0f\|lvt]y:let a = substitute(@*, ' ', '_', 'g') \| exec "!qpdfview --unique ~/work/research/papers/" . a . ".pdf &"<CR>
 
 " update papers page with new pdf files
 nmap <buffer> <Leader>u :!vimwiki_add_papers.sh<CR>
