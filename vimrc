@@ -24,6 +24,7 @@ if hostname() == "zenbook"
     Plugin 'vimwiki/vimwiki'		    " vimwiki
     Plugin 'mclgn/vimlab'		    " vimlab
     Plugin 'lervag/vimtex'		    " vimtex
+    Plugin 'linkinpark342/xonsh-vim'	    " xonsh vim syntax
 endif
 
 if hostname() == "ardbeg"
@@ -96,9 +97,7 @@ set autochdir			" cwd to current file
 
 set background=dark		" needed in case urxvt background colour is transparent
 
-"------------------------------------------------------------------"
-" Misc                                                             "
-"------------------------------------------------------------------"
+" Misc ------------------------------------------------------------"
 
 " restore last line in opened file
 au BufReadPost *
@@ -117,9 +116,9 @@ if hostname() == "zenbook"
     let g:mlint_path_to_mlint = expand("$HOME") . "/applications/MATLAB/R2018b/bin/glnxa64/mlint"
     let g:vimwiki_list = [{'path': '~/work/research/research.wiki/', 'path_html': '~/work/research/research.wiki.html/'}]
 
-    let g:vimtex_view_method = 'zathura'
-
-
+    let g:vimtex_view_general_viewer = 'qpdfview'
+    let g:vimtex_view_general_options = '--unique @pdf\#src:@tex:@line:@col'
+    let g:vimtex_view_general_options_latexmk = '--unique'
 endif
 
 " session saving
@@ -135,17 +134,7 @@ else
 endif
 if &term =~ '^screen' && !has('nvim') | exe "set t_ts=\e]2; t_fs=\7" | endif
 
-" vimtex configuration
-let g:vimtex_doc_handlers = ['Texdoc']
-function! Texdoc(context)
-    call vimtex#doc#make_selection(a:context)
-    if !empty(a:context.selected)
-	execute '!texdoc' a:context.selected '&'
-    endif
-    return 1
-endfunction
-
-let g:vimtex_view_zathura_hook_callback = 'ViewerCallback'
+let g:vimtex_view_qpdfview_hook_callback = 'ViewerCallback'
 function! ViewerCallback() dict
     VimtexView
 endfunction

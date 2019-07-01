@@ -38,3 +38,5 @@ nmap <buffer> <Leader>g :Goyo<CR>
 setlocal wrap
 setlocal linebreak
 setlocal breakindent
+
+nnoremap <localleader>c :mkview<CR>gqip:silent loadview<CR>

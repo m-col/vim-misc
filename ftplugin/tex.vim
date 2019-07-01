@@ -7,3 +7,5 @@ setlocal expandtab
 nnoremap K :VimtexDocPackage<CR>
 
 nnoremap <localleader>lw :exe 'cexpr system("texcount ' . expand('%') . '")'<CR>:copen<CR>
+
+nnoremap <localleader>c :mkview<CR>gqip:silent loadview<CR>
