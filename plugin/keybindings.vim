@@ -103,3 +103,7 @@ function! ToggleTodo()
     endif
 endfunction
 nnoremap <silent> <C-@> :call ToggleTodo()<CR>
+
+" quickfix navigation
+nnoremap <localleader>cn :cn<CR>
+nnoremap <localleader>cp :cp<CR>

@@ -32,8 +32,9 @@ if hostname() == "ardbeg"
 endif
 
 Plugin 'junegunn/goyo.vim'
-Plugin 'mclgn/vim-misc'		    " my vimrc and misc functions 
+Plugin 'mclgn/vim-misc'			    " my vimrc and misc functions 
 Plugin 'mclgn/tide'			    " tmux ide
+Plugin 'nvie/vim-flake8'		    " python linter
 
 call vundle#end()			    " required
 filetype plugin indent on		    " required
@@ -138,3 +139,11 @@ let g:vimtex_view_qpdfview_hook_callback = 'ViewerCallback'
 function! ViewerCallback() dict
     VimtexView
 endfunction
+
+" disable middle click paste (restoring xterm middle click open url)
+map <MiddleMouse> <Nop>
+imap <MiddleMouse> <Nop>
+
+" flake8 settings
+let g:flake8_show_in_gutter=1
+let g:flake8_show_in_file=1
