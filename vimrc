@@ -22,12 +22,12 @@ Plugin 'VundleVim/Vundle.vim'		    " required
 
 if hostname() == "zenbook"
     Plugin 'vimwiki/vimwiki'		    " vimwiki
-    "Plugin 'mclgn/vimlab'		    " vimlab
+    "Plugin 'm-col/vimlab'		    " vimlab
     "Plugin 'lervag/vimtex'		    " vimtex
 endif
 
-Plugin 'mclgn/vim-misc'			    " my vimrc and misc functions 
-Plugin 'mclgn/tide'			    " tmux ide
+Plugin 'm-col/vim-misc'			    " my vimrc and misc functions 
+Plugin 'm-col/tide'			    " tmux ide
 
 call vundle#end()			    " required
 filetype plugin indent on		    " required
