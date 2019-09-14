@@ -63,13 +63,13 @@ augroup CursorLine
 augroup END
 
 " change cursor shape in insert mode
-let &t_SI = "\e[4 q" "underscore
-let &t_EI = "\e[2 q" "block
-augroup myCmds
-    au!
-    autocmd VimEnter * silent !echo -ne "\e[2 q"
-augroup END
+"let &t_SI = "\e[4 q" "underscore
+"let &t_EI = "\e[2 q" "block
+"augroup myCmds
+"    au!
+"    autocmd VimEnter * silent !echo -ne "\e[2 q"
+"augroup END
 
 " character for split barrier
-set fillchars=vert:\ 
-hi VertSplit cterm=bold term=bold ctermbg=12
+"set fillchars=vert:\ 
+"hi VertSplit cterm=bold term=bold ctermbg=12

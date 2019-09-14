@@ -22,19 +22,12 @@ Plugin 'VundleVim/Vundle.vim'		    " required
 
 if hostname() == "zenbook"
     Plugin 'vimwiki/vimwiki'		    " vimwiki
-    Plugin 'mclgn/vimlab'		    " vimlab
-    Plugin 'lervag/vimtex'		    " vimtex
-    Plugin 'linkinpark342/xonsh-vim'	    " xonsh vim syntax
+    "Plugin 'mclgn/vimlab'		    " vimlab
+    "Plugin 'lervag/vimtex'		    " vimtex
 endif
 
-if hostname() == "ardbeg"
-    Plugin 'mclgn/vimlab'		    " vimlab
-endif
-
-Plugin 'junegunn/goyo.vim'
 Plugin 'mclgn/vim-misc'			    " my vimrc and misc functions 
 Plugin 'mclgn/tide'			    " tmux ide
-Plugin 'nvie/vim-flake8'		    " python linter
 
 call vundle#end()			    " required
 filetype plugin indent on		    " required
@@ -108,42 +101,43 @@ au BufReadPost *
 
 " netrw
 nmap <C-n> :Explore<CR>
-nmap <C-t> :Texplore<CR>
 let g:netrw_sort_sequence='[\/]$'
 
 " machine specific settings
 if hostname() == "zenbook"
-    packadd! matchit		" needed for matlab indentation functionality
-    let g:mlint_path_to_mlint = expand("$HOME") . "/applications/MATLAB/R2018b/bin/glnxa64/mlint"
+
+    "packadd! matchit		" needed for matlab indentation functionality
+    "let g:mlint_path_to_mlint = expand("$HOME") . "/applications/MATLAB/R2018b/bin/glnxa64/mlint"
+
     let g:vimwiki_list = [{'path': '~/work/research/research.wiki/', 'path_html': '~/work/research/research.wiki.html/'}]
 
-    let g:vimtex_view_general_viewer = 'qpdfview'
-    let g:vimtex_view_general_options = '--unique @pdf\#src:@tex:@line:@col'
-    let g:vimtex_view_general_options_latexmk = '--unique'
+    "let g:vimtex_view_general_viewer = 'qpdfview'
+    "let g:vimtex_view_general_options = '--unique @pdf\#src:@tex:@line:@col'
+    "let g:vimtex_view_general_options_latexmk = '--unique'
 endif
 
 " session saving
-let g:vimlab_session = "~/.vim/sessions/matlab-session.vim"
+"let g:vimlab_session = "~/.vim/sessions/matlab-session.vim"
 
-" Intelligently navigate tmux panes and Vim splits using the same keys.
-" See https://sunaku.github.io/tmux-select-pane.html for documentation.
-let progname = substitute($VIM, '.*[/\\]', '', '')
-if empty(v:servername)
-    set title titlestring=%{progname}\ [%n]\ %F
-else
-    set title titlestring=%{progname}\ [%{v:servername}]\ [%n]\ %F
-endif
-if &term =~ '^screen' && !has('nvim') | exe "set t_ts=\e]2; t_fs=\7" | endif
-
-let g:vimtex_view_qpdfview_hook_callback = 'ViewerCallback'
-function! ViewerCallback() dict
-    VimtexView
-endfunction
+"" Intelligently navigate tmux panes and Vim splits using the same keys.
+"" See https://sunaku.github.io/tmux-select-pane.html for documentation.
+"let progname = substitute($VIM, '.*[/\\]', '', '')
+"if empty(v:servername)
+"    set title titlestring=%{progname}\ [%n]\ %F
+"else
+"    set title titlestring=%{progname}\ [%{v:servername}]\ [%n]\ %F
+"endif
+"if &term =~ '^screen' && !has('nvim') | exe "set t_ts=\e]2; t_fs=\7" | endif
+"
+"let g:vimtex_view_qpdfview_hook_callback = 'ViewerCallback'
+"function! ViewerCallback() dict
+"    VimtexView
+"endfunction
 
 " disable middle click paste (restoring xterm middle click open url)
-map <MiddleMouse> <Nop>
-imap <MiddleMouse> <Nop>
+"map <MiddleMouse> <Nop>
+"imap <MiddleMouse> <Nop>
 
 " flake8 settings
-let g:flake8_show_in_gutter=1
-let g:flake8_show_in_file=1
+"let g:flake8_show_in_gutter=1
+"let g:flake8_show_in_file=1
