@@ -20,7 +20,7 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'		    " required
 
-if hostname() == "zenbook"
+if stridx(hostname(), "book")
     Plugin 'vimwiki/vimwiki'		    " vimwiki
     "Plugin 'm-col/vimlab'		    " vimlab
     "Plugin 'lervag/vimtex'		    " vimtex
