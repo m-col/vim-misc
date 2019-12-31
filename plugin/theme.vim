@@ -12,12 +12,15 @@ endif
 if ! empty($TMUX)
     set statusline +=%6*%*
 endif
+
 set statusline +=%1*\ \ %<%F\ \ %*	    " full path
 set statusline +=%2*\ \ %y%*                " file type
 set statusline +=%2*\ %m\ %*                " modified flag
-set statusline +=%3*%=%*		    " centre padding
-set statusline +=%4*\ \ %l\ /\ %L\ \ %*	    " current / total lines
-set statusline +=%5*\ %n\ %*		    " buffer number 
+set statusline +=%3*%{noscrollbar#statusline(12,'\ ','-')}
+set statusline +=%4*%=%*		    " centre padding
+set statusline +=%5*\ \ %l\ /\ %L\ \ %*	    " current / total lines
+set statusline +=%1*\ %n\ %*		    " buffer number 
+
 hi User1 ctermfg=0 ctermbg=5 cterm=none 
 hi User2 ctermfg=0 ctermbg=4 cterm=none 
 hi User3 ctermfg=0 ctermbg=14 cterm=none 
@@ -71,5 +74,5 @@ augroup END
 "augroup END
 
 " character for split barrier
-"set fillchars=vert:\ 
-"hi VertSplit cterm=bold term=bold ctermbg=12
+set fillchars=vert:\ 
+hi VertSplit cterm=bold term=bold ctermbg=12

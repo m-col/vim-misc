@@ -8,6 +8,9 @@
 " toggle fold
 nnoremap <space> za
 
+" yank to end of line
+nnoremap Y y$
+
 " buffer navigation
 nnoremap <leader>b :ls<CR>:b<space>
 nnoremap <Leader>v :ls<CR>:vert sb<space>
@@ -31,20 +34,13 @@ nnoremap QW :wq<CR>
 nnoremap :Q :q
 nnoremap :W :w
 
-" yank to end of line
-nnoremap Y y$
-
 " disable K man
 nnoremap K k
 
 " copy and paste system clipboard
-nnoremap <C-p> "+p
 nnoremap <C-y> "+y
 nnoremap <C-y><C-y> ms0v$"+y`s
-vnoremap <C-p> "+p
 vnoremap <C-y> "+y
-"next one needs fixing:
-"inoremap <C-p> <Esc>"+p
 inoremap <C-y> <Esc>"+y
 
 " save read-only file with sudo trick
@@ -107,3 +103,23 @@ nnoremap <silent> <C-@> :call ToggleTodo()<CR>
 " quickfix navigation
 nnoremap <localleader>cn :cn<CR>
 nnoremap <localleader>cp :cp<CR>
+
+" netrw
+nmap <C-n> :Explore<CR>
+let g:netrw_sort_sequence='[\/]$'
+
+" disable middle click paste (restoring xterm middle click open url)
+map <MiddleMouse> <Nop>
+imap <MiddleMouse> <Nop>
+
+" gitgutter
+nmap <localleader>g :GitGutterToggle<CR>
+nmap gp <Plug>(GitGutterPreviewHunk)
+nmap gs <Plug>(GitGutterStageHunk)
+nmap gu <Plug>(GitGutterUndoHunk)
+nmap [g <Plug>(GitGutterPrevHunk)
+nmap ]g <Plug>(GitGutterNextHunk)
+omap ig <Plug>(GitGutterTextObjectInnerPending)
+omap ag <Plug>(GitGutterTextObjectOuterPending)
+xmap ig <Plug>(GitGutterTextObjectInnerVisual)
+xmap ag <Plug>(GitGutterTextObjectOuterVisual)
