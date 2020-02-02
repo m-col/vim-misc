@@ -20,7 +20,7 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'		    " required
 
-if stridx(hostname(), "book")
+if stridx(hostname(), "book") != -1
     Plugin 'vimwiki/vimwiki'		    " vimwiki
     "Plugin 'gu-fan/riv.vim'
     Plugin 'm-col/vimlab'		    " vimlab
@@ -102,7 +102,7 @@ au BufReadPost *
 	    \ | endif
 
 " machine specific settings
-if stridx(hostname(), "book")
+if stridx(hostname(), "book") != -1
 
     packadd! matchit		" needed for matlab indentation functionality
     "let g:mlint_path_to_mlint = expand("$HOME") . "/applications/MATLAB/R2018b/bin/glnxa64/mlint"
