@@ -22,7 +22,7 @@ Plugin 'VundleVim/Vundle.vim'		    " required
 
 if stridx(hostname(), "book") != -1
     Plugin 'vimwiki/vimwiki'		    " vimwiki
-    "Plugin 'gu-fan/riv.vim'
+    Plugin 'gu-fan/riv.vim'
     Plugin 'm-col/vimlab'		    " vimlab
     "Plugin 'lervag/vimtex'		    " vimtex
     Plugin 'airblade/vim-gitgutter'	    " gitgutter
@@ -120,6 +120,9 @@ if stridx(hostname(), "book") != -1
     "endfunction
 
     let g:gitgutter_enabled = 0
+
+    "riv
+    let g:riv_projects = [{ 'path': '~/wiki', }]
 endif
 
 " Intelligently navigate tmux panes and Vim splits using the same keys.
