@@ -24,11 +24,11 @@ if stridx(hostname(), "book") != -1
     Plugin 'vimwiki/vimwiki'		    " vimwiki
     Plugin 'gu-fan/riv.vim'
     Plugin 'm-col/vimlab'		    " vimlab
-    "Plugin 'lervag/vimtex'		    " vimtex
+    Plugin 'lervag/vimtex'		    " vimtex
 endif
 
 Plugin 'm-col/vim-misc'			    " my vimrc and misc functions 
-Plugin 'airblade/vim-gitgutter'	    " gitgutter
+Plugin 'airblade/vim-gitgutter'		    " gitgutter
 Plugin 'm-col/tide'			    " tmux ide
 
 call vundle#end()			    " required
@@ -80,7 +80,6 @@ autocmd VimResized * wincmd =	" keep splits equal size when resizing window
 syntax on			" enable syntax highlighting
 set mouse=a			" enable mouse
 set t_Co=16			" use the 16 terminal colours
-"set ttyfast
 
 set sessionoptions=buffers,folds,tabpages
 set viewoptions=folds,cursor
@@ -90,8 +89,6 @@ set wildignorecase		" disable wildmenu case sensitivity
 set wildmode=full:list		" format wildmenu to expand and scroll with tab
 
 set autochdir			" cwd to current file
-
-set background=dark		" needed in case urxvt background colour is transparent
 
 " Misc ------------------------------------------------------------"
 
@@ -105,25 +102,20 @@ au BufReadPost *
 if stridx(hostname(), "book") != -1
 
     packadd! matchit		" needed for matlab indentation functionality
-    "let g:mlint_path_to_mlint = expand("$HOME") . "/applications/MATLAB/R2018b/bin/glnxa64/mlint"
     let g:vimlab_session = "~/.vim/sessions/matlab-session.vim"
 
-    " potentially unneeded
-    "let g:vimwiki_list = [{'path': '~/work/research/research.wiki/', 'path_html': '~/work/research/research.wiki.html/'}]
+    let g:vimtex_view_general_viewer = 'qpdfview'
+    let g:vimtex_view_general_options = '--unique @pdf\#src:@tex:@line:@col'
+    let g:vimtex_view_general_options_latexmk = '--unique'
+    let g:vimtex_view_qpdfview_hook_callback = 'ViewerCallback'
+    function! ViewerCallback() dict
+        VimtexView
+    endfunction
 
-    "let g:vimtex_view_general_viewer = 'qpdfview'
-    "let g:vimtex_view_general_options = '--unique @pdf\#src:@tex:@line:@col'
-    "let g:vimtex_view_general_options_latexmk = '--unique'
-    "let g:vimtex_view_qpdfview_hook_callback = 'ViewerCallback'
-    "function! ViewerCallback() dict
-    "    VimtexView
-    "endfunction
-
-    let g:gitgutter_enabled = 0
-
-    "riv
     let g:riv_projects = [{ 'path': '~/wiki', }]
 endif
+
+let g:gitgutter_enabled = 0
 
 " Intelligently navigate tmux panes and Vim splits using the same keys.
 " See https://sunaku.github.io/tmux-select-pane.html for documentation.
