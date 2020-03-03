@@ -25,10 +25,10 @@ if stridx(hostname(), "book") != -1
     Plugin 'gu-fan/riv.vim'
     Plugin 'm-col/vimlab'		    " vimlab
     "Plugin 'lervag/vimtex'		    " vimtex
-    Plugin 'airblade/vim-gitgutter'	    " gitgutter
 endif
 
 Plugin 'm-col/vim-misc'			    " my vimrc and misc functions 
+Plugin 'airblade/vim-gitgutter'	    " gitgutter
 Plugin 'm-col/tide'			    " tmux ide
 
 call vundle#end()			    " required
