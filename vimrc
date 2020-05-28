@@ -21,7 +21,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'		    " required
 
 if stridx(hostname(), "book") != -1
-    Plugin 'vimwiki/vimwiki'		    " vimwiki
+    "Plugin 'vimwiki/vimwiki'		    " vimwiki
     Plugin 'gu-fan/riv.vim'
     Plugin 'm-col/vimlab'		    " vimlab
     Plugin 'lervag/vimtex'		    " vimtex
@@ -30,6 +30,7 @@ endif
 Plugin 'm-col/vim-misc'			    " my vimrc and misc functions 
 Plugin 'airblade/vim-gitgutter'		    " gitgutter
 Plugin 'm-col/tide'			    " tmux ide
+Plugin 'terryma/vim-multiple-cursors'	    " multicursor
 
 call vundle#end()			    " required
 filetype plugin indent on		    " required
@@ -112,10 +113,11 @@ if stridx(hostname(), "book") != -1
         VimtexView
     endfunction
 
-    let g:riv_projects = [{ 'path': '~/wiki', }]
+    let g:riv_projects = [{ 'path': '~/git/phd', }]
 endif
 
 let g:gitgutter_enabled = 0
+
 
 " Intelligently navigate tmux panes and Vim splits using the same keys.
 " See https://sunaku.github.io/tmux-select-pane.html for documentation.
@@ -126,3 +128,12 @@ else
     set title titlestring=%{progname}\ [%{v:servername}]\ [%n]\ %F
 endif
 if &term =~ '^screen' && !has('nvim') | exe "set t_ts=\e]2; t_fs=\7" | endif
+
+
+" vim-multiple-cursors
+let g:multi_cursor_use_default_mapping = 0
+let g:multi_cursor_start_word_key      = '<C-m>'
+let g:multi_cursor_next_key            = '<C-n>'
+let g:multi_cursor_prev_key            = '<C-p>'
+let g:multi_cursor_skip_key            = '<C-x>'
+let g:multi_cursor_quit_key            = '<Esc>'
