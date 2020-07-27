@@ -114,6 +114,8 @@ if stridx(hostname(), "book") != -1
     endfunction
 
     let g:riv_projects = [{ 'path': '~/git/phd', }]
+    let g:riv_disable_folding = 1
+    set mmp=2000
 endif
 
 let g:gitgutter_enabled = 0
@@ -132,7 +134,7 @@ if &term =~ '^screen' && !has('nvim') | exe "set t_ts=\e]2; t_fs=\7" | endif
 
 " vim-multiple-cursors
 let g:multi_cursor_use_default_mapping = 0
-let g:multi_cursor_start_word_key      = '<C-m>'
+let g:multi_cursor_start_word_key      = '<C-c>'
 let g:multi_cursor_next_key            = '<C-n>'
 let g:multi_cursor_prev_key            = '<C-p>'
 let g:multi_cursor_skip_key            = '<C-x>'
