@@ -21,12 +21,12 @@ set statusline +=%4*%=%*		    " centre padding
 set statusline +=%5*\ \ %l\ /\ %L\ \ %*	    " current / total lines
 set statusline +=%1*\ %n\ %*		    " buffer number 
 
-hi User1 ctermfg=0 ctermbg=5 cterm=none 
-hi User2 ctermfg=0 ctermbg=4 cterm=none 
-hi User3 ctermfg=0 ctermbg=14 cterm=none 
-hi User4 ctermfg=0 ctermbg=2 cterm=none 
-hi User5 ctermfg=0 ctermbg=3 cterm=none 
-hi User6 ctermfg=3 ctermbg=5 cterm=none 
+hi User1 ctermfg=0 ctermbg=5 cterm=none
+hi User2 ctermfg=0 ctermbg=4 cterm=none
+hi User3 ctermfg=0 ctermbg=14 cterm=none
+hi User4 ctermfg=0 ctermbg=2 cterm=none
+hi User5 ctermfg=0 ctermbg=3 cterm=none
+hi User6 ctermfg=3 ctermbg=5 cterm=none
 hi User7 ctermfg=0 ctermbg=9 cterm=none
 
 " tab bar
