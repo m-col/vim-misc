@@ -23,13 +23,13 @@ Plugin 'VundleVim/Vundle.vim'		    " required
 if stridx(hostname(), "book") != -1
     "Plugin 'vimwiki/vimwiki'		    " vimwiki
     Plugin 'gu-fan/riv.vim'
-    Plugin 'm-col/vimlab'		    " vimlab
+    Plugin 'https://mcol.xyz/code/vimlab'   " vimlab
     Plugin 'lervag/vimtex'		    " vimtex
 endif
 
-Plugin 'm-col/vim-misc'			    " my vimrc and misc functions 
+Plugin 'https://mcol.xyz/code/vim-misc'	    " my vimrc and misc functions 
+Plugin 'https://mcol.xyz/code/tide'	    " tmux ide 
 Plugin 'airblade/vim-gitgutter'		    " gitgutter
-Plugin 'm-col/tide'			    " tmux ide
 Plugin 'terryma/vim-multiple-cursors'	    " multicursor
 
 call vundle#end()			    " required
@@ -139,3 +139,5 @@ let g:multi_cursor_next_key            = '<C-n>'
 let g:multi_cursor_prev_key            = '<C-p>'
 let g:multi_cursor_skip_key            = '<C-x>'
 let g:multi_cursor_quit_key            = '<Esc>'
+
+set ff=unix
