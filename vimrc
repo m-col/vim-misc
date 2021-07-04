@@ -25,12 +25,12 @@ if stridx(hostname(), "book") != -1
     Plugin 'gu-fan/riv.vim'
     Plugin 'https://mcol.xyz/code/vimlab'   " vimlab
     Plugin 'lervag/vimtex'		    " vimtex
+    Plugin 'elixir-editors/vim-elixir'	    " elixir support
 endif
 
 Plugin 'https://mcol.xyz/code/vim-misc'	    " my vimrc and misc functions 
 Plugin 'https://mcol.xyz/code/tide'	    " tmux ide 
 Plugin 'airblade/vim-gitgutter'		    " gitgutter
-Plugin 'terryma/vim-multiple-cursors'	    " multicursor
 
 call vundle#end()			    " required
 filetype plugin indent on		    " required
@@ -75,7 +75,7 @@ set noswapfile
 
 set splitbelow			" default new sp window goes below
 set splitright			" default new vsp window goes right
-set scrolloff=10		" keep x lines at top and bottom visible when scrollingkeep x lines at top and bottom visible when scrolling
+set scrolloff=4			" keep x lines at top and bottom visible when scrollingkeep x lines at top and bottom visible when scrolling
 autocmd VimResized * wincmd =	" keep splits equal size when resizing window
 
 syntax on			" enable syntax highlighting
@@ -118,9 +118,6 @@ if stridx(hostname(), "book") != -1
     set mmp=2000
 endif
 
-let g:gitgutter_enabled = 0
-
-
 " Intelligently navigate tmux panes and Vim splits using the same keys.
 " See https://sunaku.github.io/tmux-select-pane.html for documentation.
 let progname = substitute($VIM, '.*[/\\]', '', '')
@@ -132,12 +129,6 @@ endif
 if &term =~ '^screen' && !has('nvim') | exe "set t_ts=\e]2; t_fs=\7" | endif
 
 
-" vim-multiple-cursors
-let g:multi_cursor_use_default_mapping = 0
-let g:multi_cursor_start_word_key      = '<C-c>'
-let g:multi_cursor_next_key            = '<C-n>'
-let g:multi_cursor_prev_key            = '<C-p>'
-let g:multi_cursor_skip_key            = '<C-x>'
-let g:multi_cursor_quit_key            = '<Esc>'
-
-set ff=unix
+if exists("$WAYLAND_DISPLAY")
+    set ttym=sgr
+endif

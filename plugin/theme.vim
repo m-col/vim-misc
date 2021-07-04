@@ -35,11 +35,11 @@ hi TabLine ctermfg=0 ctermbg=13
 hi TabLineSel ctermfg=0 ctermbg=12
 hi Title ctermfg=0 ctermbg=12
 
-" vimdiff
-hi DiffAdd      cterm=none ctermfg=0 ctermbg=2
-hi DiffChange   cterm=none ctermfg=0 ctermbg=4
-hi DiffText     cterm=none ctermfg=0 ctermbg=6
-hi DiffDelete   cterm=bold ctermfg=0 ctermbg=1
+" vimdiff  " commented out as it was disrupting git gutter
+"hi DiffAdd      cterm=none ctermfg=0 ctermbg=2
+"hi DiffChange   cterm=none ctermfg=0 ctermbg=4
+"hi DiffText     cterm=none ctermfg=0 ctermbg=6
+"hi DiffDelete   cterm=bold ctermfg=0 ctermbg=1
 
 " folds
 hi Folded ctermbg=8 ctermfg=4 cterm=none
@@ -66,12 +66,12 @@ augroup CursorLine
 augroup END
 
 " change cursor shape in insert mode
-"let &t_SI = "\e[4 q" "underscore
-"let &t_EI = "\e[2 q" "block
-"augroup myCmds
-"    au!
-"    autocmd VimEnter * silent !echo -ne "\e[2 q"
-"augroup END
+let &t_SI = "\e[4 q" "underscore
+let &t_EI = "\e[2 q" "block
+augroup myCmds
+    au!
+    autocmd VimEnter * silent !echo -ne "\e[2 q"
+augroup END
 
 " character for split barrier
 set fillchars=vert:\ 

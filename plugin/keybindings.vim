@@ -38,10 +38,13 @@ nnoremap :W :w
 nnoremap K k
 
 " copy and paste system clipboard
-nnoremap <C-y> "+y
-nnoremap <C-y><C-y> ms0v$"+y`s
-vnoremap <C-y> "+y
-inoremap <C-y> <Esc>"+y
+nmap <C-y> "+y
+nmap <C-y><C-y> ms0v$"+y`s
+vmap <C-y> "+y
+imap <C-y> <Esc>"+y
+if exists("$WAYLAND_DISPLAY")
+    xmap "+y y:call system("wl-copy", @")\|echo '' <cr>
+endif
 
 " save read-only file with sudo trick
 cnoremap w!! w !sudo tee > /dev/null %
@@ -108,18 +111,15 @@ nnoremap <localleader>cp :cp<CR>
 nmap <C-n> :Explore<CR>
 let g:netrw_sort_sequence='[\/]$'
 
-" disable middle click paste (restoring xterm middle click open url)
-map <MiddleMouse> <Nop>
-imap <MiddleMouse> <Nop>
+" bind number keys to scroll so i can use foot terminal's alt scrolling
+map <Down> j
+map <Up> k
 
-" gitgutter
-nmap <localleader>g :GitGutterToggle<CR>
-nmap gp <Plug>(GitGutterPreviewHunk)
-nmap gs <Plug>(GitGutterStageHunk)
-nmap gu <Plug>(GitGutterUndoHunk)
-nmap [g <Plug>(GitGutterPrevHunk)
-nmap ]g <Plug>(GitGutterNextHunk)
-omap ig <Plug>(GitGutterTextObjectInnerPending)
-omap ag <Plug>(GitGutterTextObjectOuterPending)
-xmap ig <Plug>(GitGutterTextObjectInnerVisual)
-xmap ag <Plug>(GitGutterTextObjectOuterVisual)
+
+" bind scroll to move cursor up and down
+nnoremap <ScrollWheelDown> <Down>
+nnoremap <ScrollWheelUp> <Up>
+inoremap <ScrollWheelDown> <Down>
+inoremap <ScrollWheelUp> <Up>
+vnoremap <ScrollWheelDown> <Down>
+vnoremap <ScrollWheelUp> <Up>
