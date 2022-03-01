@@ -25,14 +25,11 @@ if stridx(hostname(), "book") != -1
     "Plugin 'gu-fan/riv.vim'
     Plugin 'https://mcol.xyz/code/vimlab'   " vimlab
     Plugin 'lervag/vimtex'		    " vimtex
-    Plugin 'tpope/vim-fugitive'             " git plugin
-
-    Plugin 'elixir-editors/vim-elixir'	    " elixir highlighting
-    Plugin 'vmchale/dhall-vim'              " dhall highlighting
-
-    Plugin 'https://gitlab.com/gi1242/vim-emoji-ab.git' " emoji input support
 endif
 
+Plugin 'https://gitlab.com/gi1242/vim-emoji-ab.git' " emoji input support
+Plugin 'vmchale/dhall-vim'              " dhall highlighting
+Plugin 'tpope/vim-fugitive'             " git plugin
 Plugin 'https://mcol.xyz/code/vim-misc'	    " my vimrc and misc functions 
 Plugin 'https://mcol.xyz/code/tide'	    " tmux ide 
 "Plugin 'airblade/vim-gitgutter'		    " gitgutter
