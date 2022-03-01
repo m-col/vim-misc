@@ -22,19 +22,23 @@ Plugin 'VundleVim/Vundle.vim'		    " required
 
 if stridx(hostname(), "book") != -1
     "Plugin 'vimwiki/vimwiki'		    " vimwiki
-    Plugin 'gu-fan/riv.vim'
+    "Plugin 'gu-fan/riv.vim'
     Plugin 'https://mcol.xyz/code/vimlab'   " vimlab
     Plugin 'lervag/vimtex'		    " vimtex
-    Plugin 'elixir-editors/vim-elixir'	    " elixir support
+    Plugin 'tpope/vim-fugitive'             " git plugin
+
+    Plugin 'elixir-editors/vim-elixir'	    " elixir highlighting
+    Plugin 'vmchale/dhall-vim'              " dhall highlighting
+
+    Plugin 'https://gitlab.com/gi1242/vim-emoji-ab.git' " emoji input support
 endif
 
 Plugin 'https://mcol.xyz/code/vim-misc'	    " my vimrc and misc functions 
 Plugin 'https://mcol.xyz/code/tide'	    " tmux ide 
-Plugin 'airblade/vim-gitgutter'		    " gitgutter
+"Plugin 'airblade/vim-gitgutter'		    " gitgutter
 
 call vundle#end()			    " required
 filetype plugin indent on		    " required
-
 " Brief help
 " :PluginList       - lists configured plugins
 " :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
@@ -91,6 +95,8 @@ set wildmode=full:list		" format wildmenu to expand and scroll with tab
 
 set autochdir			" cwd to current file
 
+let g:netrw_liststyle=3		" Set netrw style to tree
+
 " Misc ------------------------------------------------------------"
 
 " restore last line in opened file
@@ -107,7 +113,6 @@ if stridx(hostname(), "book") != -1
 
     let g:vimtex_view_general_viewer = 'qpdfview'
     let g:vimtex_view_general_options = '--unique @pdf\#src:@tex:@line:@col'
-    let g:vimtex_view_general_options_latexmk = '--unique'
     let g:vimtex_view_qpdfview_hook_callback = 'ViewerCallback'
     function! ViewerCallback() dict
         VimtexView
@@ -132,3 +137,5 @@ if &term =~ '^screen' && !has('nvim') | exe "set t_ts=\e]2; t_fs=\7" | endif
 if exists("$WAYLAND_DISPLAY")
     set ttym=sgr
 endif
+
+runtime macros/emoji-ab.vim
