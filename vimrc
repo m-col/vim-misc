@@ -33,6 +33,7 @@ Plugin 'tpope/vim-fugitive'             " git plugin
 Plugin 'https://mcol.xyz/code/vim-misc'	    " my vimrc and misc functions 
 Plugin 'https://mcol.xyz/code/tide'	    " tmux ide 
 "Plugin 'airblade/vim-gitgutter'		    " gitgutter
+Plugin 'Yggdroot/indentLine'                "Show indentation lines
 
 call vundle#end()			    " required
 filetype plugin indent on		    " required
@@ -111,6 +112,7 @@ if stridx(hostname(), "book") != -1
     let g:vimtex_view_general_viewer = 'qpdfview'
     let g:vimtex_view_general_options = '--unique @pdf\#src:@tex:@line:@col'
     let g:vimtex_view_qpdfview_hook_callback = 'ViewerCallback'
+    let g:vimtex_compiler_latexmk = {'build_dir' : '.latex_build'}
     function! ViewerCallback() dict
         VimtexView
     endfunction
@@ -134,5 +136,10 @@ if &term =~ '^screen' && !has('nvim') | exe "set t_ts=\e]2; t_fs=\7" | endif
 if exists("$WAYLAND_DISPLAY")
     set ttym=sgr
 endif
+
+"let g:indentLine_defaultGroup = 'PmenuSel'
+"let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+let g:vim_json_concel = 0
+let g:markdown_syntax_conceal = 0
 
 runtime macros/emoji-ab.vim
