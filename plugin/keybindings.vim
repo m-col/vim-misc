@@ -27,7 +27,6 @@ vnoremap < <gv
 vnoremap > >gv
 
 " quitting and writing shortcuts
-nnoremap Q <nop>
 nnoremap QQ :q<CR>
 nnoremap !Q :q!<CR>
 nnoremap QW :wq<CR>
