@@ -25,6 +25,8 @@ if stridx(hostname(), "book") != -1
     "Plugin 'gu-fan/riv.vim'
     Plugin 'https://mcol.xyz/code/vimlab'   " vimlab
     Plugin 'lervag/vimtex'		    " vimtex
+    Plugin 'dense-analysis/ale'             " ALE
+    Plugin 'neovimhaskell/haskell-vim'      " better haskell syntax highlighting
 endif
 
 Plugin 'https://gitlab.com/gi1242/vim-emoji-ab.git' " emoji input support
@@ -34,6 +36,7 @@ Plugin 'https://mcol.xyz/code/vim-misc'	    " my vimrc and misc functions
 Plugin 'https://mcol.xyz/code/tide'	    " tmux ide 
 "Plugin 'airblade/vim-gitgutter'		    " gitgutter
 Plugin 'Yggdroot/indentLine'                "Show indentation lines
+Plugin 'masukomi/vim-markdown-folding'      "markdown folding
 
 call vundle#end()			    " required
 filetype plugin indent on		    " required
@@ -65,9 +68,10 @@ set smarttab			" shiftwidth tab at start of line, otherwise softtabstop width ta
 set softtabstop=4		" Number of spaces per tab
 set linebreak			" Allow backspacing over indention, line breaks and insertion start
 set backspace=indent,eol,start	" Backspace behaviour
-set formatoptions+=j		" Delete comment characters when joining lines.
+set formatoptions+=j	        " Delete comment characters when joining lines.
 autocmd FileType * setlocal formatoptions-=cro    " disable autocommenting
 set matchtime=2
+set conceallevel=0              " disable all concealing
 
 set undolevels=200		" Number of undo levels
 set undodir=~/.vim/undo//	" undo files
@@ -113,13 +117,14 @@ if stridx(hostname(), "book") != -1
     let g:vimtex_view_general_options = '--unique @pdf\#src:@tex:@line:@col'
     let g:vimtex_view_qpdfview_hook_callback = 'ViewerCallback'
     let g:vimtex_compiler_latexmk = {'build_dir' : '.latex_build'}
+    let g:vimtex_syntax_conceal_disable = 1
     function! ViewerCallback() dict
         VimtexView
     endfunction
 
-    let g:riv_projects = [{ 'path': '~/git/phd', }]
-    let g:riv_disable_folding = 1
-    set mmp=2000
+    "let g:riv_projects = [{ 'path': '~/git/phd', }]
+    "let g:riv_disable_folding = 1
+    "set mmp=2000
 endif
 
 " Intelligently navigate tmux panes and Vim splits using the same keys.
@@ -143,3 +148,14 @@ let g:vim_json_concel = 0
 let g:markdown_syntax_conceal = 0
 
 runtime macros/emoji-ab.vim
+
+let g:ale_linters = {
+\   'haskell': ['hlint'],
+\   'python': ['flake8', 'mypy'],
+\}
+let g:ale_linters_explicit = 1
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_insert_leave = 0
+let g:ale_fixers = {}
+let g:ale_fixers.python = ['black', 'isort']
+let g:ale_fixers.haskell = ['ormolu']

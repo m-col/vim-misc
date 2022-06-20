@@ -122,3 +122,7 @@ inoremap <ScrollWheelDown> <Down>
 inoremap <ScrollWheelUp> <Up>
 vnoremap <ScrollWheelDown> <Down>
 vnoremap <ScrollWheelUp> <Up>
+
+" ALE navigation
+nmap <silent> <C-S-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-S-j> <Plug>(ale_next_wrap)
