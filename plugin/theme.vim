@@ -76,3 +76,6 @@ augroup END
 " character for split barrier
 set fillchars=vert:\ 
 hi VertSplit cterm=bold term=bold ctermbg=12
+
+" remove all underlining, it's ugly
+hi Underlined cterm=none

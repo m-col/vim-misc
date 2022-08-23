@@ -1,4 +1,4 @@
-setlocal textwidth=100
+setlocal textwidth=101
 "setlocal spell spelllang=en_gb
 nnoremap <localleader>c :mkview<CR>gqip:silent loadview<CR>
 

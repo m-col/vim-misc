@@ -38,6 +38,7 @@ Plugin 'https://mcol.xyz/code/tide'	    " tmux ide
 Plugin 'Yggdroot/indentLine'                "Show indentation lines
 Plugin 'masukomi/vim-markdown-folding'      "markdown folding
 
+
 call vundle#end()			    " required
 filetype plugin indent on		    " required
 " Brief help
@@ -69,9 +70,10 @@ set softtabstop=4		" Number of spaces per tab
 set linebreak			" Allow backspacing over indention, line breaks and insertion start
 set backspace=indent,eol,start	" Backspace behaviour
 set formatoptions+=j	        " Delete comment characters when joining lines.
-autocmd FileType * setlocal formatoptions-=cro    " disable autocommenting
+"autocmd FileType * setlocal formatoptions-=cro    " disable autocommenting
 set matchtime=2
 set conceallevel=0              " disable all concealing
+set nojoinspaces                " don't put 2 spaces after periods when joining lines
 
 set undolevels=200		" Number of undo levels
 set undodir=~/.vim/undo//	" undo files
