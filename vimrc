@@ -137,8 +137,8 @@ if exists("$WAYLAND_DISPLAY")
     set ttym=sgr
 endif
 
-"let g:indentLine_defaultGroup = 'PmenuSel'
-"let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+let g:indentLine_defaultGroup = 'LineNr'
+let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 let g:vim_json_concel = 0
 let g:markdown_syntax_conceal = 0
 
