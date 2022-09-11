@@ -1,7 +1,11 @@
+setlocal tabstop=4
+setlocal softtabstop=4
+setlocal shiftwidth=4
 setlocal textwidth=101
+setlocal noautoindent
+setlocal nosmartindent
+setlocal formatoptions+=a
 "setlocal spell spelllang=en_gb
-nnoremap <localleader>c :mkview<CR>gqip:silent loadview<CR>
-
 
 " format folded section header text
 function! GenericFoldText()
@@ -21,3 +25,19 @@ function! GenericFoldText()
     return level_indent . line . repeat(" ",fillcharcount) . ' ' . foldedlinecount
 endfunction
 setlocal foldtext=GenericFoldText()
+
+
+"function! MarkdownFixParagraph()
+"    let start = line("'{")
+"    let end = line("'}")
+"    let g:ale_markdown_prettier_fix_options =
+"	\ '--prose-wrap=always --print-width=101 --range-start=' . start . ' --range-end=' . end
+"    "ALEFix
+"endfunction
+"
+""nnoremap <localleader>c :mkview<CR>gqip:silent loadview<CR>
+"nnoremap <localleader>c :call MarkdownFixParagraph()<CR>
+
+"let b:ale_lint_on_text_changed = 1
+"let b:ale_fix_on_save = 1
+"let b:ale_lint_delay = 1000
