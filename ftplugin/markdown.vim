@@ -4,7 +4,7 @@ setlocal shiftwidth=4
 setlocal textwidth=101
 setlocal noautoindent
 setlocal nosmartindent
-setlocal formatoptions+=a
+"setlocal formatoptions+=a
 "setlocal spell spelllang=en_gb
 
 " format folded section header text
