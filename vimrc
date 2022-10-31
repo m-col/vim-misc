@@ -19,25 +19,14 @@ set rtp+=~/.vim/bundle/Vundle.vim	    " required
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'		    " required
-
-if stridx(hostname(), "book") != -1
-    "Plugin 'vimwiki/vimwiki'		    " vimwiki
-    "Plugin 'gu-fan/riv.vim'
-    Plugin 'https://mcol.xyz/code/vimlab'   " vimlab
-    Plugin 'lervag/vimtex'		    " vimtex
-    Plugin 'dense-analysis/ale'             " ALE
-    Plugin 'neovimhaskell/haskell-vim'      " better haskell syntax highlighting
-endif
-
+Plugin 'dense-analysis/ale'		    " ALE
+Plugin 'neovimhaskell/haskell-vim'	    " better haskell syntax highlighting
 Plugin 'https://gitlab.com/gi1242/vim-emoji-ab.git' " emoji input support
-Plugin 'vmchale/dhall-vim'              " dhall highlighting
-Plugin 'tpope/vim-fugitive'             " git plugin
+Plugin 'vmchale/dhall-vim'		    " dhall highlighting
+Plugin 'tpope/vim-fugitive'		    " git plugin
 Plugin 'https://mcol.xyz/code/vim-misc'	    " my vimrc and misc functions 
 Plugin 'https://mcol.xyz/code/tide'	    " tmux ide 
-"Plugin 'airblade/vim-gitgutter'		    " gitgutter
-Plugin 'Yggdroot/indentLine'                "Show indentation lines
-Plugin 'masukomi/vim-markdown-folding'      "markdown folding
-
+Plugin 'Yggdroot/indentLine'                " Show indentation lines
 
 call vundle#end()			    " required
 filetype plugin indent on		    " required
@@ -109,26 +98,6 @@ au BufReadPost *
 	    \ |   exe "normal! g`\""
 	    \ | endif
 
-" machine specific settings
-if stridx(hostname(), "book") != -1
-
-    packadd! matchit		" needed for matlab indentation functionality
-    let g:vimlab_session = "~/.vim/sessions/matlab-session.vim"
-
-    let g:vimtex_view_general_viewer = 'qpdfview'
-    let g:vimtex_view_general_options = '--unique @pdf\#src:@tex:@line:@col'
-    let g:vimtex_view_qpdfview_hook_callback = 'ViewerCallback'
-    let g:vimtex_compiler_latexmk = {'build_dir' : '.latex_build'}
-    let g:vimtex_syntax_conceal_disable = 1
-    function! ViewerCallback() dict
-        VimtexView
-    endfunction
-
-    "let g:riv_projects = [{ 'path': '~/git/phd', }]
-    "let g:riv_disable_folding = 1
-    "set mmp=2000
-endif
-
 " Intelligently navigate tmux panes and Vim splits using the same keys.
 " See https://sunaku.github.io/tmux-select-pane.html for documentation.
 let progname = substitute($VIM, '.*[/\\]', '', '')
@@ -146,8 +115,6 @@ endif
 
 let g:indentLine_defaultGroup = 'LineNr'
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
-let g:vim_json_concel = 0
-let g:markdown_syntax_conceal = 0
 
 runtime macros/emoji-ab.vim
 
