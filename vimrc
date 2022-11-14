@@ -27,6 +27,7 @@ Plugin 'tpope/vim-fugitive'		    " git plugin
 Plugin 'https://mcol.xyz/code/vim-misc'	    " my vimrc and misc functions 
 Plugin 'https://mcol.xyz/code/tide'	    " tmux ide 
 Plugin 'Yggdroot/indentLine'                " Show indentation lines
+Plugin 'masukomi/vim-markdown-folding'      " markdown folding
 
 call vundle#end()			    " required
 filetype plugin indent on		    " required
