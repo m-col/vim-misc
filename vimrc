@@ -118,9 +118,9 @@ let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 
 runtime macros/emoji-ab.vim
 
+"\   'python': ['flake8', 'mypy'],
 let g:ale_linters = {
 \   'haskell': ['hlint'],
-\   'python': ['flake8', 'mypy'],
 \}
 let g:ale_linters_explicit = 1
 let g:ale_lint_on_text_changed = 'never'
@@ -131,3 +131,8 @@ let g:ale_fixers = {
 \   'python': ['black', 'isort'],
 \}
 "\   'markdown': ['prettier'],
+
+let g:vim_markdown_conceal = 0
+let g:vim_markdown_conceal_code_blocks = 0
+let g:vim_json_conceal=0
+let g:markdown_syntax_conceal=0
