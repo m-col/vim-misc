@@ -1,25 +1,5 @@
-"------------------------------------------------------------------"
-"                          _                                       "
-"                         (_)                                      "
-"                   __   ___ _ __ ___  _ __ ___                    "
-"                   \ \ / / | '_ ` _ \| '__/ __|                   "
-"                    \ V /| | | | | | | | | (__                    "
-"                     \_/ |_|_| |_| |_|_|  \___|                   "
-"                                                                  "
-"------------------------------------------------------------------"
-
-
-"------------------------------------------------------------------"
-" Plugins                                                          "
-"------------------------------------------------------------------"
-
-set nocompatible			    " be iMproved, required
-filetype plugin indent on		    " required
-
-"------------------------------------------------------------------"
-" General settings                                                 "
-"------------------------------------------------------------------"
-
+set nocompatible		" be iMproved, required
+filetype plugin indent on	" required
 set autoread			" update when file is modified outside of vim
 set autowrite			" update file when changing buffers, opening new files, etc
 au BufLeave * :silent! update	" save automatically when leaving buffer
@@ -67,8 +47,6 @@ set wildmode=full:list		" format wildmenu to expand and scroll with tab
 set autochdir			" cwd to current file
 
 let g:netrw_liststyle=3		" Set netrw style to tree
-
-" Misc ------------------------------------------------------------"
 
 " restore last line in opened file
 au BufReadPost *
