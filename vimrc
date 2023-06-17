@@ -14,11 +14,8 @@
 "------------------------------------------------------------------"
 
 set nocompatible			    " be iMproved, required
-filetype off				    " required
-set rtp+=~/.vim/bundle/Vundle.vim	    " required
-call vundle#begin()
+filetype plugin indent on		    " required
 
-Plugin 'VundleVim/Vundle.vim'		    " required
 Plugin 'dense-analysis/ale'		    " ALE
 Plugin 'neovimhaskell/haskell-vim'	    " better haskell syntax highlighting
 Plugin 'https://gitlab.com/gi1242/vim-emoji-ab.git' " emoji input support
@@ -27,15 +24,6 @@ Plugin 'tpope/vim-fugitive'		    " git plugin
 Plugin 'https://mcol.xyz/code/vim-misc'	    " my vimrc and misc functions 
 Plugin 'https://mcol.xyz/code/tide'	    " tmux ide 
 Plugin 'Yggdroot/indentLine'                " Show indentation lines
-
-call vundle#end()			    " required
-filetype plugin indent on		    " required
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-" see :h vundle for more details or wiki for FAQ
 
 
 "------------------------------------------------------------------"
