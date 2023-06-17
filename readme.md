@@ -10,3 +10,11 @@ To install:
 To update git submodule plugins:
 
     git -C ~/.vim/pack/vim-misc submodule update --remote
+
+To add a new git-backed plugin:
+
+    git submodule add <url of git repository> start/<plugin name>
+
+To remove a plugin:
+
+    git rm start/<plugin name>
