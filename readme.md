@@ -4,6 +4,8 @@ To install:
     mv $HOME/.tmux.conf $HOME/.tmux.conf.backup
     echo "source ~/.vim/pack/vim-misc/tmux.conf" > ~/.tmux.conf
     mkdir -p $HOME/.vim/{backups,sessions,swap,undo,spell}
+    git -C ~/.vim/pack/vim-misc submodule init
+    git -C ~/.vim/pack/vim-misc submodule update --remote
 
 To update git submodule plugins:
 
