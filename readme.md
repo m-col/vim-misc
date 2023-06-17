@@ -1,6 +1,9 @@
-install beside [vundle](https://github.com/VundleVim/Vundle.vim)
+To install:
 
-    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-    git clone https://mcol.xyz/code/vim-misc ~/.vim/bundle/vim-misc
-    ~/.vim/bundle/vim-misc/install
-    :PluginInstall
+    git clone https://github.com/m-col/vim-misc ~/.vim/pack/vim-misc
+    mv $HOME/.tmux.conf $HOME/.tmux.conf.backup
+    echo "source $dir/tmux.conf" > ~/.tmux.conf
+
+To update git submodule plugins:
+
+    git -C ~/.vim/pack/vim-misc submodule update --remote
