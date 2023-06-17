@@ -16,16 +16,6 @@
 set nocompatible			    " be iMproved, required
 filetype plugin indent on		    " required
 
-Plugin 'dense-analysis/ale'		    " ALE
-Plugin 'neovimhaskell/haskell-vim'	    " better haskell syntax highlighting
-Plugin 'https://gitlab.com/gi1242/vim-emoji-ab.git' " emoji input support
-Plugin 'vmchale/dhall-vim'		    " dhall highlighting
-Plugin 'tpope/vim-fugitive'		    " git plugin
-Plugin 'https://mcol.xyz/code/vim-misc'	    " my vimrc and misc functions 
-Plugin 'https://mcol.xyz/code/tide'	    " tmux ide 
-Plugin 'Yggdroot/indentLine'                " Show indentation lines
-
-
 "------------------------------------------------------------------"
 " General settings                                                 "
 "------------------------------------------------------------------"

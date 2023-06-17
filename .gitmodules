@@ -1,0 +1,21 @@
+[submodule "start/ale"]
+	path = start/ale
+	url = https://github.com/dense-analysis/ale
+[submodule "start/tide"]
+	path = start/tide
+	url = https://github.com/m-col/tide
+[submodule "start/haskell-vim"]
+	path = start/haskell-vim
+	url = https://github.com/neovimhaskell/haskell-vim.git
+[submodule "start/vim-emoji-ab"]
+	path = start/vim-emoji-ab
+	url = https://gitlab.com/gi1242/vim-emoji-ab.git
+[submodule "start/dhall-vim"]
+	path = start/dhall-vim
+	url = https://github.com/vmchale/dhall-vim.git
+[submodule "start/vim-fugitive"]
+	path = start/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive
+[submodule "start/indentLine"]
+	path = start/indentLine
+	url = https://github.com/Yggdroot/indentLine
