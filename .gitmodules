@@ -22,3 +22,6 @@
 [submodule "start/ctrlp.vim"]
 	path = start/ctrlp.vim
 	url = https://github.com/ctrlpvim/ctrlp.vim
+[submodule "start/copilot.vim"]
+	path = start/copilot.vim
+	url = https://github.com/github/copilot.vim

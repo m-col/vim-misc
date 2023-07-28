@@ -53,6 +53,9 @@ hi Title ctermfg=3 ctermbg=0
 " matched brackets
 hi MatchParen ctermfg=7 cterm=underline ctermbg=0 
 
+" github copilot
+hi CopilotSuggestion ctermfg=4
+
 " line numbers
 set number relativenumber
 hi LineNr ctermfg=5
