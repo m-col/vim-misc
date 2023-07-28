@@ -19,3 +19,6 @@
 [submodule "start/indentLine"]
 	path = start/indentLine
 	url = https://github.com/Yggdroot/indentLine
+[submodule "start/ctrlp.vim"]
+	path = start/ctrlp.vim
+	url = https://github.com/ctrlpvim/ctrlp.vim
