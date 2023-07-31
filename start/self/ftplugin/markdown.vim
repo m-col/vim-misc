@@ -7,6 +7,8 @@ setlocal nosmartindent
 "setlocal formatoptions+=a
 "setlocal spell spelllang=en_gb
 
+let g:markdown_fold_override_foldtext = 0
+
 " format folded section header text
 function! GenericFoldText()
     let line = getline(v:foldstart)
