@@ -75,17 +75,19 @@ let g:indentLine_conceallevel = 0
 
 runtime macros/emoji-ab.vim
 
-"\   'python': ['flake8', 'mypy'],
+" Only linters listed explicitly will be run.
+let g:ale_linters_explicit = 1
 let g:ale_linters = {
 \   'haskell': ['hlint'],
+\   'python': ['flake8', 'mypy', 'ruff'],
 \}
-let g:ale_linters_explicit = 1
-let g:ale_lint_on_text_changed = 'never'
-let g:ale_lint_on_insert_leave = 0
+" Don't show errors in virtual text or signs column; rely on echoed message instead
+let g:ale_virtualtext_cursor = 0
+let g:ale_set_signs = 0
 "let g:ale_command_wrapper = 'nice -n5'
 let g:ale_fixers = {
 \   'haskell': ['ormolu'],
-\   'python': ['black', 'isort'],
+\   'python': ['black', 'ruff'],
 \}
 "\   'markdown': ['prettier'],
 
@@ -93,3 +95,6 @@ let g:vim_markdown_conceal = 0
 let g:vim_markdown_conceal_code_blocks = 0
 let g:vim_json_conceal=0
 let g:markdown_syntax_conceal=0
+
+let g:any_jump_references_only_for_current_filetype = 1
+let g:any_jump_disable_vcs_ignore = 1

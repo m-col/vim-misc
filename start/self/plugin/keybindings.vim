@@ -126,3 +126,12 @@ vnoremap <ScrollWheelUp> <Up>
 " ALE navigation
 nmap <silent> <C-S-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-S-j> <Plug>(ale_next_wrap)
+nmap <silent> <C-S-f> :ALEFix<CR>
+
+" Github copilot
+imap <silent> <S-Tab> <Plug>(copilot-next)
+
+" any-jump
+let g:any_jump_disable_default_keybindings = 1
+nnoremap <leader>g :AnyJump<CR>
+xnoremap <leader>g :AnyJumpVisual<CR>
