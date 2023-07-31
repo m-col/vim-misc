@@ -25,3 +25,9 @@
 [submodule "start/copilot.vim"]
 	path = start/copilot.vim
 	url = https://github.com/github/copilot.vim
+[submodule "start/any-jump.vim"]
+	path = start/any-jump.vim
+	url = https://github.com/pechorin/any-jump.vim
+[submodule "start/vim-gutentags"]
+	path = start/vim-gutentags
+	url = https://github.com/ludovicchabant/vim-gutentags
