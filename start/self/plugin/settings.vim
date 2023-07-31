@@ -71,6 +71,7 @@ endif
 
 let g:indentLine_defaultGroup = 'LineNr'
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+let g:indentLine_conceallevel = 0
 
 runtime macros/emoji-ab.vim
 
