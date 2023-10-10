@@ -98,3 +98,9 @@ let g:markdown_syntax_conceal=0
 
 let g:any_jump_references_only_for_current_filetype = 1
 let g:any_jump_disable_vcs_ignore = 1
+
+" Blamer plugin disable by default
+let g:blamer_delay = 1000
+let g:blamer_show_in_insert_modes = 0
+let g:blamer_date_format = '%d/%m/%y'
+highlight Blamer guifg=lightgrey
