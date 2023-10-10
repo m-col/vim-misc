@@ -135,3 +135,6 @@ imap <silent> <S-Tab> <Plug>(copilot-next)
 let g:any_jump_disable_default_keybindings = 1
 nnoremap <leader>g :AnyJump<CR>
 xnoremap <leader>g :AnyJumpVisual<CR>
+
+" blamer
+nnoremap <C-b> :BlamerToggle<CR>

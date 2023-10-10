@@ -31,3 +31,6 @@
 [submodule "start/vim-gutentags"]
 	path = start/vim-gutentags
 	url = https://github.com/ludovicchabant/vim-gutentags
+[submodule "start/blamer.nvim"]
+	path = start/blamer.nvim
+	url = https://github.com/APZelos/blamer.nvim
