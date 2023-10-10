@@ -7,9 +7,6 @@
 [submodule "start/haskell-vim"]
 	path = start/haskell-vim
 	url = https://github.com/neovimhaskell/haskell-vim.git
-[submodule "start/vim-emoji-ab"]
-	path = start/vim-emoji-ab
-	url = https://gitlab.com/gi1242/vim-emoji-ab.git
 [submodule "start/dhall-vim"]
 	path = start/dhall-vim
 	url = https://github.com/vmchale/dhall-vim.git
