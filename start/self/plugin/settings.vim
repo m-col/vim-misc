@@ -46,7 +46,7 @@ set wildmode=full:list		" format wildmenu to expand and scroll with tab
 
 set autochdir			" cwd to current file
 
-let g:netrw_liststyle=3		" Set netrw style to tree
+let g:netrw_liststyle=0		" Set netrw style to thin listing
 
 " restore last line in opened file
 au BufReadPost *
