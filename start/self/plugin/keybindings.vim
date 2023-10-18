@@ -114,7 +114,6 @@ let g:netrw_sort_sequence='[\/]$'
 map <Down> j
 map <Up> k
 
-
 " bind scroll to move cursor up and down
 nnoremap <ScrollWheelDown> <Down>
 nnoremap <ScrollWheelUp> <Up>
@@ -130,6 +129,9 @@ nmap <silent> <C-S-f> :ALEFix<CR>
 
 " Github copilot
 imap <silent> <S-Tab> <Plug>(copilot-next)
+
+" CtrlP (in addition to the default Ctrl-p binding)
+nnoremap <silent> <C-[> :CtrlPTag<CR>
 
 " any-jump
 let g:any_jump_disable_default_keybindings = 1
