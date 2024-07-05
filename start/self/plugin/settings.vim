@@ -79,7 +79,7 @@ runtime macros/emoji-ab.vim
 let g:ale_linters_explicit = 1
 let g:ale_linters = {
 \   'haskell': ['hlint'],
-\   'python': ['flake8', 'mypy', 'ruff'],
+\   'python': ['flake8', 'pyright', 'ruff'],
 \}
 " Don't show errors in virtual text or signs column; rely on echoed message instead
 let g:ale_virtualtext_cursor = 0
