@@ -16,12 +16,12 @@
 [submodule "start/ctrlp.vim"]
 	path = start/ctrlp.vim
 	url = https://github.com/ctrlpvim/ctrlp.vim
-[submodule "start/copilot.vim"]
-	path = start/copilot.vim
-	url = https://github.com/github/copilot.vim
 [submodule "start/vim-gutentags"]
 	path = start/vim-gutentags
 	url = https://github.com/ludovicchabant/vim-gutentags
 [submodule "start/blamer.nvim"]
 	path = start/blamer.nvim
 	url = https://github.com/APZelos/blamer.nvim
+[submodule "start/supermaven-nvim"]
+	path = start/supermaven-nvim
+	url = https://github.com/supermaven-inc/supermaven-nvim
