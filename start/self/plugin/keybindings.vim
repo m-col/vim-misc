@@ -128,7 +128,7 @@ nmap <silent> <C-S-j> <Plug>(ale_next_wrap)
 nmap <silent> <C-S-f> :ALEFix<CR>
 
 " Github copilot
-imap <silent> <S-Tab> <Plug>(copilot-next)
+"imap <silent> <S-Tab> <Plug>(copilot-next)
 
 " CtrlP (in addition to the default Ctrl-p binding)
 nnoremap <silent> <C-o> :CtrlPTag<CR>
