@@ -25,3 +25,9 @@
 [submodule "start/supermaven-nvim"]
 	path = start/supermaven-nvim
 	url = https://github.com/supermaven-inc/supermaven-nvim
+[submodule "start/catppuccin"]
+	path = start/catppuccin
+	url = https://github.com/catppuccin/nvim
+[submodule "start/lualine.nvim"]
+	path = start/lualine.nvim
+	url = https://github.com/nvim-lualine/lualine.nvim
