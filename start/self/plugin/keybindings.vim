@@ -131,7 +131,7 @@ nmap <silent> <C-S-f> :ALEFix<CR>
 imap <silent> <S-Tab> <Plug>(copilot-next)
 
 " CtrlP (in addition to the default Ctrl-p binding)
-nnoremap <silent> <C-[> :CtrlPTag<CR>
+nnoremap <silent> <C-o> :CtrlPTag<CR>
 
 " any-jump
 let g:any_jump_disable_default_keybindings = 1
