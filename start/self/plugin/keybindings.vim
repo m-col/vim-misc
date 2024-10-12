@@ -123,20 +123,16 @@ vnoremap <ScrollWheelDown> <Down>
 vnoremap <ScrollWheelUp> <Up>
 
 " ALE navigation
-nmap <silent> <C-S-k> <Plug>(ale_previous_wrap)
-nmap <silent> <C-S-j> <Plug>(ale_next_wrap)
-nmap <silent> <C-S-f> <Plug>(ale_fix)
+nmap <silent> <leader>g <Plug>(ale_next_wrap)
+nmap <silent> <leader><S-g> <Plug>(ale_previous_wrap)
+""nmap <silent> <C-S-f> <Plug>(ale_fix)
 
-" Github copilot
-"imap <silent> <S-Tab> <Plug>(copilot-next)
+" ALE find references
+nmap <silent> <C-i> <Plug>(ale_find_references)
 
 " CtrlP (in addition to the default Ctrl-p binding)
 nnoremap <silent> <C-o> :CtrlPTag<CR>
 
-" any-jump
-let g:any_jump_disable_default_keybindings = 1
-nnoremap <leader>g :AnyJump<CR>
-xnoremap <leader>g :AnyJumpVisual<CR>
 
 " blamer
 nnoremap <A-b> :BlamerToggle<CR>

@@ -96,9 +96,6 @@ let g:vim_markdown_conceal_code_blocks = 0
 let g:vim_json_conceal=0
 let g:markdown_syntax_conceal=0
 
-let g:any_jump_references_only_for_current_filetype = 1
-let g:any_jump_disable_vcs_ignore = 1
-
 " Blamer plugin disable by default
 let g:blamer_delay = 1000
 let g:blamer_show_in_insert_modes = 0
