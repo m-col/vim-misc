@@ -87,7 +87,7 @@ nnoremap <leader>p gqip
 nnoremap vs :vsp<CR>
 
 " toggle spell checking
-nnoremap <leader>S :setlocal spell! spelllang=en_gb spell?<CR>:echo "zg to add new word"<CR>
+"nnoremap <leader>S :setlocal spell! spelllang=en_gb spell?<CR>:echo "zg to add new word"<CR>
 
 " toggle [ ] tick box on current line with ctrl-space
 "function! ToggleTodo()
@@ -125,7 +125,7 @@ vnoremap <ScrollWheelUp> <Up>
 " ALE navigation
 nmap <silent> <C-S-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-S-j> <Plug>(ale_next_wrap)
-nmap <silent> <C-S-f> :ALEFix<CR>
+nmap <silent> <C-S-f> <Plug>(ale_fix)
 
 " Github copilot
 "imap <silent> <S-Tab> <Plug>(copilot-next)
@@ -139,4 +139,15 @@ nnoremap <leader>g :AnyJump<CR>
 xnoremap <leader>g :AnyJumpVisual<CR>
 
 " blamer
-nnoremap <C-b> :BlamerToggle<CR>
+nnoremap <A-b> :BlamerToggle<CR>
+
+" add python breakpoint: vim function that checks for 'breakpoint' in the current line and removes this line if it exists, otherwise adds a new line on this line with breakpoint() on it
+function! Breakpoint()
+    let l:line = getline('.')
+    if match(l:line, 'breakpoint') != -1
+	execute 'normal! dd'
+    else
+	execute 'normal! Obreakpoint()'
+    endif
+endfunction
+nnoremap <C-b> :call Breakpoint()<CR>
