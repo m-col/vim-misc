@@ -65,9 +65,9 @@ endif
 if &term =~ '^screen' && !has('nvim') | exe "set t_ts=\e]2; t_fs=\7" | endif
 
 
-if exists("$WAYLAND_DISPLAY")
-    set ttym=sgr
-endif
+" if exists("$WAYLAND_DISPLAY")
+"     set ttym=sgr
+" endif
 
 let g:indentLine_defaultGroup = 'LineNr'
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
