@@ -80,6 +80,7 @@ let g:ale_linters_explicit = 1
 let g:ale_linters = {
 \   'haskell': ['hlint'],
 \   'python': ['flake8', 'pyright', 'ruff'],
+\   'typescriptreact': ['tsserver', 'eslint'],
 \}
 " Don't show errors in virtual text or signs column; rely on echoed message instead
 let g:ale_virtualtext_cursor = 0
@@ -88,6 +89,7 @@ let g:ale_set_signs = 0
 let g:ale_fixers = {
 \   'haskell': ['ormolu'],
 \   'python': ['black', 'ruff'],
+\   'typescriptreact': ['eslint'],
 \}
 "\   'markdown': ['prettier'],
 
