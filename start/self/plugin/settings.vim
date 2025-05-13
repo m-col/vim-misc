@@ -83,6 +83,7 @@ let g:ale_linters = {
 \   'python': ['flake8', 'pyright', 'ruff'],
 \   'typescriptreact': ['tsserver', 'eslint'],
 \   'typescript': ['tsserver', 'eslint'],
+\   'rust': ['analyzer'],
 \}
 " Don't show errors in virtual text or signs column; rely on echoed message instead
 let g:ale_virtualtext_cursor = 0
@@ -93,6 +94,7 @@ let g:ale_fixers = {
 \   'python': ['black', 'ruff'],
 \   'typescriptreact': ['eslint'],
 \   'typescript': ['eslint'],
+\   'rust': ['rustfmt'],
 \}
 "\   'markdown': ['prettier'],
 let g:ale_echo_cursor = 1
@@ -107,3 +109,6 @@ let g:blamer_delay = 1000
 let g:blamer_show_in_insert_modes = 0
 let g:blamer_date_format = '%d/%m/%y'
 highlight Blamer guifg=lightgrey
+
+" used by Ctrl-P, likely among other things
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,node_modules,target,.mypy_cache
