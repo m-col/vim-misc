@@ -45,6 +45,7 @@ set wildignorecase		" disable wildmenu case sensitivity
 set wildmode=full:list		" format wildmenu to expand and scroll with tab
 
 set autochdir			" cwd to current file
+set updatetime=500		" update time for swap files (unused) and e.g. ALE hover
 
 let g:netrw_liststyle=0		" Set netrw style to thin listing
 
@@ -81,6 +82,7 @@ let g:ale_linters = {
 \   'haskell': ['hlint'],
 \   'python': ['flake8', 'pyright', 'ruff'],
 \   'typescriptreact': ['tsserver', 'eslint'],
+\   'typescript': ['tsserver', 'eslint'],
 \}
 " Don't show errors in virtual text or signs column; rely on echoed message instead
 let g:ale_virtualtext_cursor = 0
@@ -90,8 +92,10 @@ let g:ale_fixers = {
 \   'haskell': ['ormolu'],
 \   'python': ['black', 'ruff'],
 \   'typescriptreact': ['eslint'],
+\   'typescript': ['eslint'],
 \}
 "\   'markdown': ['prettier'],
+let g:ale_echo_cursor = 1
 
 let g:vim_markdown_conceal = 0
 let g:vim_markdown_conceal_code_blocks = 0
