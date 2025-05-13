@@ -75,13 +75,6 @@ endfunction
 command! -bang -complete=buffer -nargs=? Bclose call s:Bclose('<bang>', '<args>')
 
 
-
-
-
-if v:servername == "VIMLAB"
-    nnoremap <buffer> <silent> <BS> <Plug>Kwbd
-else
-    autocmd BufDelete * if len(filter(range(1, bufnr('$')), 'empty(bufname(v:val)) && buflisted(v:val)')) == 1 && v:servername != "VIMLAB" | quit | endif
-endif
+autocmd BufDelete * if len(filter(range(1, bufnr('$')), 'empty(bufname(v:val)) && buflisted(v:val)')) == 1 | quit | endif
 
 nnoremap <silent> <BS> :Bclose<CR>

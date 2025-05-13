@@ -122,14 +122,9 @@ inoremap <ScrollWheelUp> <Up>
 vnoremap <ScrollWheelDown> <Down>
 vnoremap <ScrollWheelUp> <Up>
 
-" ALE navigation
-nmap <silent> <leader>g <Plug>(ale_next_wrap)
-nmap <silent> <leader><S-g> <Plug>(ale_previous_wrap)
-""nmap <silent> <C-S-f> <Plug>(ale_fix)
-
-" ALE find references
-nmap <silent> <C-i> <Plug>(ale_find_references)
-
+" ALE
+"nmap <silent> <C-S-f> <Plug>(ale_fix)
+nmap <silent> <C-[> <Plug>(ale_find_references)
 nmap <silent> <C-]> <Plug>(ale_go_to_definition)
 
 " CtrlP (in addition to the default Ctrl-p binding)
