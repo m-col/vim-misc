@@ -124,7 +124,7 @@ vnoremap <ScrollWheelUp> <Up>
 
 " ALE
 "nmap <silent> <C-S-f> <Plug>(ale_fix)
-nmap <silent> <C-[> <Plug>(ale_find_references)
+nmap <silent> <C-i> <Plug>(ale_find_references)
 nmap <silent> <C-]> <Plug>(ale_go_to_definition)
 
 " CtrlP (in addition to the default Ctrl-p binding)

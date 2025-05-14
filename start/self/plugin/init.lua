@@ -8,5 +8,17 @@ require("supermaven-nvim").setup({
 })
 
 require('lualine').setup({
-    options = { section_separators = '', component_separators = '', path = 3 }
+    options = {
+	section_separators = '',
+	component_separators = '',
+	path = 3,
+    },
+    sections = {
+	lualine_a = {'mode'},
+	lualine_b = {},
+	lualine_c = {'filename'},
+	lualine_x = {'encoding', 'fileformat', 'filetype'},
+	lualine_y = {'progress'},
+	lualine_z = {'location'}
+    },
 })
