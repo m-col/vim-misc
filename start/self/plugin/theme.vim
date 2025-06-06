@@ -79,6 +79,3 @@ augroup END
 "" character for split barrier
 "set fillchars=vert:\ 
 "hi VertSplit cterm=bold term=bold ctermbg=12
-
-" neovim stuff
-colorscheme catppuccin-macchiato

@@ -70,10 +70,6 @@ if &term =~ '^screen' && !has('nvim') | exe "set t_ts=\e]2; t_fs=\7" | endif
 "     set ttym=sgr
 " endif
 
-let g:indentLine_defaultGroup = 'LineNr'
-let g:indentLine_char_list = ['|', '¦', '┆', '┊']
-let g:indentLine_conceallevel = 0
-
 runtime macros/emoji-ab.vim
 
 " Only linters listed explicitly will be run.
@@ -103,12 +99,6 @@ let g:vim_markdown_conceal = 0
 let g:vim_markdown_conceal_code_blocks = 0
 let g:vim_json_conceal=0
 let g:markdown_syntax_conceal=0
-
-" Blamer plugin disable by default
-let g:blamer_delay = 1000
-let g:blamer_show_in_insert_modes = 0
-let g:blamer_date_format = '%d/%m/%y'
-highlight Blamer guifg=lightgrey
 
 " used by Ctrl-P, likely among other things
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,node_modules,target,.mypy_cache

@@ -1,33 +1,3 @@
-[submodule "start/ale"]
-	path = start/ale
-	url = https://github.com/dense-analysis/ale
 [submodule "start/tide"]
 	path = start/tide
 	url = https://github.com/m-col/tide
-[submodule "start/haskell-vim"]
-	path = start/haskell-vim
-	url = https://github.com/neovimhaskell/haskell-vim.git
-[submodule "start/dhall-vim"]
-	path = start/dhall-vim
-	url = https://github.com/vmchale/dhall-vim.git
-[submodule "start/indentLine"]
-	path = start/indentLine
-	url = https://github.com/Yggdroot/indentLine
-[submodule "start/ctrlp.vim"]
-	path = start/ctrlp.vim
-	url = https://github.com/ctrlpvim/ctrlp.vim
-[submodule "start/vim-gutentags"]
-	path = start/vim-gutentags
-	url = https://github.com/ludovicchabant/vim-gutentags
-[submodule "start/blamer.nvim"]
-	path = start/blamer.nvim
-	url = https://github.com/APZelos/blamer.nvim
-[submodule "start/supermaven-nvim"]
-	path = start/supermaven-nvim
-	url = https://github.com/supermaven-inc/supermaven-nvim
-[submodule "start/catppuccin"]
-	path = start/catppuccin
-	url = https://github.com/catppuccin/nvim
-[submodule "start/lualine.nvim"]
-	path = start/lualine.nvim
-	url = https://github.com/nvim-lualine/lualine.nvim
