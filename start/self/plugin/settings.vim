@@ -48,6 +48,7 @@ set autochdir			" cwd to current file
 set updatetime=500		" update time for swap files (unused) and e.g. ALE hover
 
 let g:netrw_liststyle=0		" Set netrw style to thin listing
+let g:netrw_sort_sequence='[\/]$'
 
 " restore last line in opened file
 au BufReadPost *

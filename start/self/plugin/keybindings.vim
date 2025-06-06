@@ -108,7 +108,6 @@ nnoremap vs :vsp<CR>
 
 " netrw
 nmap <C-n> :Explore<CR>
-let g:netrw_sort_sequence='[\/]$'
 
 " bind number keys to scroll so i can use foot terminal's alt scrolling
 map <Down> j

@@ -23,10 +23,6 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
--- for nvim-tree.lua
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-
 -- Setup lazy.nvim
 require("lazy").setup({
   {
@@ -103,15 +99,15 @@ require("lazy").setup({
   --    },
   --    opts = {},
   --},
-  --{
-  --  "supermaven-inc/supermaven-nvim",
-  --  opts = {
-  --    keymaps = {
-  --      accept_suggestion = "<Tab>",
-  --      clear_suggestion = "<S-Tab>",
-  --    }
-  --  },
-  --},
+  {
+    "supermaven-inc/supermaven-nvim",
+    opts = {
+      keymaps = {
+        accept_suggestion = "<Tab>",
+        clear_suggestion = "<S-Tab>",
+      }
+    },
+  },
   {
   "yetone/avante.nvim",
   event = "VeryLazy",
