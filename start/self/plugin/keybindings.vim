@@ -132,3 +132,7 @@ nnoremap <silent> <C-o> :CtrlPTag<CR>
 
 " blamer
 nnoremap <A-b> :BlamerToggle<CR>
+
+" marks
+nnoremap mm mM
+nnoremap `m `M
