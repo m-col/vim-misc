@@ -81,6 +81,9 @@ require("lazy").setup({
   },
   {
       'ctrlpvim/ctrlp.vim',
+      init = function()
+        vim.g.ctrlp_map = ''  -- Disable the default <C-p> mapping
+      end,
   },
   {
       'ludovicchabant/vim-gutentags',

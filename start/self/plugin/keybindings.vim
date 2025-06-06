@@ -126,6 +126,10 @@ vnoremap <ScrollWheelUp> <Up>
 nmap <silent> <C-i> <Plug>(ale_find_references)
 nmap <silent> <C-]> <Plug>(ale_go_to_definition)
 
+" telescope
+nnoremap <silent> <C-p> :Telescope git_files<CR>
+"nnoremap <silent> <C-o> :Telescope tags<CR>  " isn't working
+
 " CtrlP (in addition to the default Ctrl-p binding)
 nnoremap <silent> <C-o> :CtrlPTag<CR>
 
