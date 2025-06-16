@@ -64,6 +64,12 @@ require("lazy").setup({
   { 'neovimhaskell/haskell-vim' },
   { 'dense-analysis/ale' },
   {
+    'm-col/buffer-closer.nvim',
+    opts = {
+      close_key = '<BS>',
+    },
+  },
+  {
     'nvim-telescope/telescope.nvim',
     tag = '0.1.8',
     dependencies = { 'nvim-lua/plenary.nvim' },
@@ -88,20 +94,12 @@ require("lazy").setup({
   {
       'ludovicchabant/vim-gutentags',
   },
-  --{
-  --    'prichrd/netrw.nvim',
-  --    dependencies = { 'nvim-tree/nvim-web-devicons' },
-  --    opts = {},
-  --    use_devicons = true,
-  --},
-  --{
-  --    'nvim-tree/nvim-tree.lua',
-  --    lazy = false,
-  --    dependencies = {
-  --      "nvim-tree/nvim-web-devicons",
-  --    },
-  --    opts = {},
-  --},
+  {
+      'prichrd/netrw.nvim',
+      dependencies = { 'nvim-tree/nvim-web-devicons' },
+      opts = {},
+      use_devicons = true,
+  },
   {
     "supermaven-inc/supermaven-nvim",
     opts = {
@@ -112,54 +110,57 @@ require("lazy").setup({
     },
   },
   {
-  "yetone/avante.nvim",
-  event = "VeryLazy",
-  version = false,
-  opts = {
-    provider = "claude",
-    --providers = {
-    --  openai = {
-    --    endpoint = "https://api.openai.com/v1",
-    --    model = "gpt-4o", -- your desired model (or use gpt-4o, etc.)
-    --    extra_request_body = {
-    --      timeout = 30000, -- Timeout in milliseconds, increase this for reasoning models
-    --      temperature = 0.75,
-    --      max_completion_tokens = 8192, -- Increase this to include reasoning tokens (for reasoning models)
-    --      --reasoning_effort = "medium", -- low|medium|high, only used for reasoning models
-    --    },
-    --  },
-    --},
-  },
-  dependencies = {
-    "nvim-treesitter/nvim-treesitter",
-    "stevearc/dressing.nvim",
-    "nvim-lua/plenary.nvim",
-    "MunifTanjim/nui.nvim",
-    --- The below dependencies are optional,
-    "nvim-telescope/telescope.nvim", -- for file_selector provider telescope
-    "hrsh7th/nvim-cmp", -- autocompletion for avante commands and mentions
-    "nvim-tree/nvim-web-devicons",
-    {
-      -- support for image pasting
-      "HakonHarnes/img-clip.nvim",
-      event = "VeryLazy",
-      opts = {
-        default = {
-          embed_image_as_base64 = false,
-          prompt_for_file_name = false,
-          drag_and_drop = {
-            insert_mode = true,
+    "yetone/avante.nvim",
+    event = "VeryLazy",
+    version = false,
+    opts = {
+      provider = "claude",
+      --providers = {
+      --  openai = {
+      --    endpoint = "https://api.openai.com/v1",
+      --    model = "gpt-4o", -- your desired model (or use gpt-4o, etc.)
+      --    extra_request_body = {
+      --      timeout = 30000, -- Timeout in milliseconds, increase this for reasoning models
+      --      temperature = 0.75,
+      --      max_completion_tokens = 8192, -- Increase this to include reasoning tokens (for reasoning models)
+      --      --reasoning_effort = "medium", -- low|medium|high, only used for reasoning models
+      --    },
+      --  },
+      --},
+    },
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+      "stevearc/dressing.nvim",
+      "nvim-lua/plenary.nvim",
+      "MunifTanjim/nui.nvim",
+      --- The below dependencies are optional,
+      "nvim-telescope/telescope.nvim", -- for file_selector provider telescope
+      "hrsh7th/nvim-cmp", -- autocompletion for avante commands and mentions
+      "nvim-tree/nvim-web-devicons",
+      {
+        -- support for image pasting
+        "HakonHarnes/img-clip.nvim",
+        event = "VeryLazy",
+        opts = {
+          default = {
+            embed_image_as_base64 = false,
+            prompt_for_file_name = false,
+            drag_and_drop = {
+              insert_mode = true,
+            },
           },
         },
       },
-    },
-    {
-      'MeanderingProgrammer/render-markdown.nvim',
-      opts = {
-        file_types = { "markdown", "Avante" },
+      {
+        'MeanderingProgrammer/render-markdown.nvim',
+        opts = {
+          file_types = { "markdown", "Avante" },
+        },
+        ft = { "markdown", "Avante" },
       },
-      ft = { "markdown", "Avante" },
     },
-  },
-}
+  }
 })
+
+--local colors = require("catppuccin.palettes").get_palette("mocha")
+--vim.cmd("highlight CursorLine gui=reverse")

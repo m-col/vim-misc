@@ -16,7 +16,7 @@ nnoremap <leader>b :ls<CR>:b<space>
 nnoremap <Leader>v :ls<CR>:vert sb<space>
 nnoremap <Leader>j :bnext<CR> 
 nnoremap <Leader>k :bprevious<CR>
-nnoremap <Leader><BS> :w<CR>:bdelete<CR>
+"nnoremap <Leader><BS> :w<CR>:Bdelete<CR>
 
 " move between tabs
 nnoremap <Leader>n gT
@@ -139,3 +139,6 @@ nnoremap <A-b> :BlamerToggle<CR>
 " marks
 nnoremap mm mM
 nnoremap `m `M
+
+" buffer write close
+nnoremap <silent> <leader><BS> :write<CR>:BuffCls<CR>
