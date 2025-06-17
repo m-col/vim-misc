@@ -103,4 +103,3 @@ let g:markdown_syntax_conceal=0
 
 " used by Ctrl-P, likely among other things
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,node_modules,target,.mypy_cache
-set notermguicolors
