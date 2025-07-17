@@ -103,3 +103,11 @@ let g:markdown_syntax_conceal=0
 
 " used by Ctrl-P, likely among other things
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,node_modules,target,.mypy_cache
+
+" For some reason i need this for typescriptreact files to be configured
+augroup run_ftplugin_typescriptreact
+    autocmd!
+    autocmd FileType typescriptreact source ~/.vim/pack/vim-misc/start/self/ftplugin/typescriptreact.vim
+    autocmd FileType typescript source ~/.vim/pack/vim-misc/start/self/ftplugin/typescript.vim
+    autocmd FileType javascript source ~/.vim/pack/vim-misc/start/self/ftplugin/javascript.vim
+augroup END

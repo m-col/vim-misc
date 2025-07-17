@@ -125,6 +125,7 @@ vnoremap <ScrollWheelUp> <Up>
 "nmap <silent> <C-S-f> <Plug>(ale_fix)
 nmap <silent> <C-i> <Plug>(ale_find_references)
 nmap <silent> <C-]> <Plug>(ale_go_to_definition)
+nmap <silent> <C-f> <Plug>(ale_fix)
 
 " telescope
 nnoremap <silent> <C-p> :Telescope git_files<CR>
