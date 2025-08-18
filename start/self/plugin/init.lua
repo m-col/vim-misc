@@ -56,6 +56,7 @@ require("lazy").setup({
       },
     },
   },
+
   {
       'Yggdroot/indentLine',
       init = function()
@@ -64,14 +65,18 @@ require("lazy").setup({
         vim.g.indentLine_conceallevel = 0
       end
   },
+
   { 'neovimhaskell/haskell-vim' },
+
   { 'dense-analysis/ale' },
+
   {
     'm-col/buffer-closer.nvim',
     opts = {
       close_key = '<BS>',
     },
   },
+
   {
     'nvim-telescope/telescope.nvim',
     tag = '0.1.8',
@@ -88,15 +93,18 @@ require("lazy").setup({
       }
     },
   },
+
   {
       'ctrlpvim/ctrlp.vim',
       init = function()
         vim.g.ctrlp_map = ''  -- Disable the default <C-p> mapping
       end,
   },
+
   {
       'ludovicchabant/vim-gutentags',
   },
+
   {
     "supermaven-inc/supermaven-nvim",
     opts = {
@@ -106,6 +114,7 @@ require("lazy").setup({
       }
     },
   },
+
   --{
   --  "yetone/avante.nvim",
   --  event = "VeryLazy",
