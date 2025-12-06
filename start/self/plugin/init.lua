@@ -70,6 +70,14 @@ require("lazy").setup({
 
   { 'dense-analysis/ale' },
 
+  { 
+      'hashivim/vim-terraform',
+      init = function()
+        vim.g.terraform_fmt_on_save = 1
+	vim.g.terraform_align = 1
+      end
+  },
+
   {
     'm-col/buffer-closer.nvim',
     opts = {

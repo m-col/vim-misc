@@ -78,10 +78,11 @@ let g:ale_linters_explicit = 1
 let g:ale_linters = {
 \   'haskell': ['hlint'],
 \   'python': ['flake8', 'pyright', 'ruff'],
-\   'typescriptreact': ['tsserver', 'eslint'],
-\   'typescript': ['tsserver', 'eslint'],
-\   'rust': ['analyzer'],
+"\   'rust': ['analyzer'],
+\   'terraform': ['tflint', 'terraform_ls'],
 \}
+"\   'typescriptreact': ['tsserver', 'eslint'],
+"\   'typescript': ['tsserver', 'eslint'],
 " Don't show errors in virtual text or signs column; rely on echoed message instead
 let g:ale_virtualtext_cursor = 0
 let g:ale_set_signs = 0
@@ -104,10 +105,10 @@ let g:markdown_syntax_conceal=0
 " used by Ctrl-P, likely among other things
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,node_modules,target,.mypy_cache
 
-" For some reason i need this for typescriptreact files to be configured
-augroup run_ftplugin_typescriptreact
-    autocmd!
-    autocmd FileType typescriptreact source ~/.vim/pack/vim-misc/start/self/ftplugin/typescriptreact.vim
-    autocmd FileType typescript source ~/.vim/pack/vim-misc/start/self/ftplugin/typescript.vim
-    autocmd FileType javascript source ~/.vim/pack/vim-misc/start/self/ftplugin/javascript.vim
-augroup END
+"" For some reason i need this for typescriptreact files to be configured
+"augroup run_ftplugin_typescriptreact
+"    autocmd!
+"    autocmd FileType typescriptreact source ~/.vim/pack/vim-misc/start/self/ftplugin/typescriptreact.vim
+"    autocmd FileType typescript source ~/.vim/pack/vim-misc/start/self/ftplugin/typescript.vim
+"    autocmd FileType javascript source ~/.vim/pack/vim-misc/start/self/ftplugin/javascript.vim
+"augroup END
