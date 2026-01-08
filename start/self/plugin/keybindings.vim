@@ -144,3 +144,9 @@ nnoremap `m `M
 
 " buffer write close
 nnoremap <silent> <leader><BS> :write<CR>:BuffCls<CR>
+
+" pg_format visual blocks with Ctrl-f
+"vmap <C-f> <ESC>:'<,'>! pg_format --comma-break --redundant-parenthesis --format-type<CR>
+
+"buffer close window
+autocmd FileType ale-preview-selection nnoremap <buffer> <Esc> :close<CR>
