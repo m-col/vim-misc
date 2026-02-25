@@ -126,7 +126,7 @@ vnoremap <ScrollWheelUp> <Up>
 nmap <silent> <C-i> <Plug>(ale_find_references)
 nmap <silent> <C-]> <Plug>(ale_go_to_definition)
 nmap <silent> <C-f> <Plug>(ale_fix)
-nmap <silent> <leader>r :ALERename<CR>
+nmap <silent> <leader>r :ALERename \| w<CR>
 
 " telescope
 nnoremap <silent> <C-p> :Telescope git_files<CR>
@@ -134,9 +134,6 @@ nnoremap <silent> <C-p> :Telescope git_files<CR>
 
 " CtrlP (in addition to the default Ctrl-p binding)
 nnoremap <silent> <C-o> :CtrlPTag<CR>
-
-" blamer
-nnoremap <A-b> :BlamerToggle<CR>
 
 " marks
 nnoremap mm mM
