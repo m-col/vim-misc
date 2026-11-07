@@ -1,4 +1,4 @@
-# neovim lua config
+-- neovim lua config
 
 -- set this early so that theming can be set up
 vim.opt.termguicolors = true
